@@ -89,8 +89,10 @@ if (gx != gy)
 {
     g[gx] = gy;
 }
+```
 
-// NOT this
+```cpp
+// NOT this — brace omitted
 if (gx != gy) g[gx] = gy;
 // and NOT K&R
 if (gx != gy) {
