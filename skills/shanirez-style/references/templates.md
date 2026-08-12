@@ -396,32 +396,34 @@ int lca(int x, int y)
 
 ## 9. Grid BFS
 
-Offsets live in a global `ms[4][2]` table (never `dx`/`dy`); the candidate cell is `nx`/`ny`, and
-the bounds check plus the visited check are merged into one `||` guard with `continue`. Use
-`ms[8][2]` for eight directions, or a second table `ms2[4][2]` for a distinct move set.
+Offsets live in a global `ms[4][2]` table (never `dx`/`dy`) on its own declaration line; the
+candidate cell is `nx`/`ny`; the queue is a global `queue<pair<int, int>> q` pushed with
+`q.emplace(make_pair(x, y))` and read through `.first`/`.second`. The bounds check and the visited
+check merge into one `||` guard with `continue`. Use `ms[8][2]` for eight directions, or a second
+table `ms2[4][2]` for a distinct move set.
 
 ```cpp
 #define MX 1005
+int n, m, dis[MX][MX], vis[MX][MX];
 int ms[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-int n, m, dis[MX][MX];
 char mp[MX][MX];
-queue<int> que;
+queue<pair<int, int>> q;
 void bfs(int sx, int sy)
 {
-    que.push(sx * m + sy), dis[sx][sy] = 0;
-    while (que.size())
+    q.emplace(make_pair(sx, sy)), vis[sx][sy] = 1;
+    while (q.size())
     {
-        int x = que.front() / m, y = que.front() % m;
-        que.pop();
+        int x = q.front().first, y = q.front().second;
+        q.pop();
         for (int i = 0; i < 4; i++)
         {
             int nx = x + ms[i][0], ny = y + ms[i][1];
-            if (nx < 1 || nx > n || ny < 1 || ny > m || mp[nx][ny] == '#' || dis[nx][ny] != 1e9)
+            if (nx < 1 || nx > n || ny < 1 || ny > m || mp[nx][ny] == '#' || vis[nx][ny])
             {
                 continue;
             }
-            dis[nx][ny] = dis[x][y] + 1;
-            que.push(nx * m + ny);
+            vis[nx][ny] = 1, dis[nx][ny] = dis[x][y] + 1;
+            q.emplace(make_pair(nx, ny));
         }
     }
 }
