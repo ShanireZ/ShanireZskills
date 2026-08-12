@@ -6,25 +6,28 @@ braces, 4-space indent, **no blank lines**, 1-based indexing, global allocation,
 code blocks have no blank line between functions because the real files don't.
 
 Contents:
-1. Fast input — hand-written `read()`
+1. Fast input/output — hand-written `read()` + `printf`
 2. DSU / Union-Find (`dfn` + `g[]`)
 3. Closed-interval binary search
 4. Fenwick / BIT (`lowbit`)
 5. Lazy segment tree (`lc/rc` node pool)
-6. Graph storage (adjacency `vector`; 链式前向星 as a legacy form to read, not to write)
+6. Graph storage (`to[]` unweighted, `es[]` weighted; 链式前向星 as a legacy form to read)
 7. Dijkstra (priority_queue + `vector<Edge>`)
-8. Binary-lifting LCA (iterative BFS build)
-9. Grid BFS (`ms[4][2]` offsets, `nx`/`ny`)
+8. Binary-lifting LCA (recursive DFS build)
+9. Grid BFS (`struct Node` queue, `ms[4][2]` offsets, `nx`/`ny`)
 10. Sorting structs (`operator<` and `cmp`)
 11. Formatted float output (PAT)
 12. Multi-test-case scaffold
+13. `__int128` output
 
 ---
 
-## 1. Fast input — hand-written `read()`
+## 1. Fast input/output — hand-written `read()` + `printf`
 
-Use only when input is large enough to matter (otherwise plain `cin`). Reads a non-negative int;
-add a sign branch if negatives are possible.
+Use only when input is large enough to matter (otherwise plain `cin`) — 13 of the last 940 files.
+Reads a non-negative int; add a sign branch if negatives are possible. **Fast input and fast
+output come as a pair**: a file with `read()` prints with `printf`, not `cout` (13 of the 18
+recent `printf` files also define `read()`; only 2 files mix `cin` with `printf`).
 
 ```cpp
 int read()
@@ -42,6 +45,10 @@ int read()
     }
     return ans;
 }
+// ...
+int n = read();
+// ...
+printf("%d\n", ans[i]);
 ```
 
 ---
@@ -49,7 +56,32 @@ int read()
 ## 2. DSU / Union-Find
 
 House form: parent array named `g[]`, find function named **`dfn`** (path compression), initialize
-`g[i] = i` in `main`, merge inline with the comma operator.
+`g[i] = i` in `main`, merge inline with the comma operator. Two spellings of `dfn` are equally
+native across the last two years — the block form below, and a one-line ternary that assigns
+inside the branch:
+
+```cpp
+int dfn(int x)
+{
+    return x == g[x] ? x : g[x] = dfn(g[x]);
+}
+```
+
+A 带权并查集 keeps the same shape but grabs the old parent before recursing, so the stored
+weight can be folded on the way back up (file suffix ` PowDfn`):
+
+```cpp
+int dfn(int x)
+{
+    if (x != g[x])
+    {
+        int f = g[x];
+        g[x] = dfn(g[x]);
+        v[x] += v[f];
+    }
+    return g[x];
+}
+```
 
 ```cpp
 int n, m, cnt, g[100005];
@@ -131,21 +163,28 @@ long long query(int x)
 
 ## 5. Lazy segment tree (node pool with `lc/rc`)
 
-The house segment tree is a **static struct pool** named `ns`, indexed by an allocation counter
-`npos`, with explicit `lc/rc` child pointers (never `now << 1`). The builder is `init` and takes
-the child slot by reference; the range update is `edit`. **`mid` is a plain local
-`int mid = (l + r) / 2;` recomputed in each function** — there is no `#define mid`. This is
-range-add / range-sum.
+The house segment tree is a **static struct pool** named `ns`, indexed by an allocation counter,
+with explicit `lc/rc` child pointers (never `now << 1`). The builder takes the child slot by
+reference; the range update is `edit`. **`mid` is a plain local `int mid = (l + r) / 2;`
+recomputed in each function** — there is no `#define mid`. This is range-add / range-sum.
+
+Two naming pairs are equally native, so pick one and keep it: the builder is **`init`** or
+**`maketree`** (6 files vs 4 in the last two years) and the counter is **`npos`** or **`pos`**
+(6 vs 6). **The child links are always `int`** — all 13 recent pool files declare `int lc, rc`,
+which is also what the "structural data stays `int`" rule in `SKILL.md` says. Only the fields
+that carry a value (`v`, `tag`) widen to `long long`, and only when the sums actually need it.
 
 ```cpp
 #define MX 100005
 struct Node
 {
-    long long lc, rc, v, tag;
+    int lc, rc;
+    long long v, tag;
 };
 Node ns[MX * 4];
-long long n, m, root, npos, a[MX];
-void init(long long &now, int l, int r)
+int n, m, root, npos;
+long long a[MX];
+void init(int &now, int l, int r)
 {
     now = ++npos;
     if (l == r)
@@ -219,16 +258,18 @@ calls read `init(LC, l, mid), init(RC, mid + 1, r);`. Use both or neither.
 
 ## 6. Graph storage
 
-**The form to write — adjacency `vector`.** Unweighted: `vector<int> es[MX]`. Weighted (or carrying
-extra per-edge data): a small `struct Edge`. Iterate with range-for when the edge index isn't
-needed. `push_back` and `emplace_back` are both native here; stay consistent within a file.
+**The form to write — adjacency `vector`, named for its payload.** Unweighted lists are
+`vector<int> to[MX]` (29 recent files, vs 13 for `es` and 7 for `g`); weighted ones, or any
+carrying extra per-edge data, use a small `struct Edge` in `vector<Edge> es[MX]` (25 files —
+`vector<Edge> to[]` never appears). Push with **`push_back`** (22 : 2 over `emplace_back` for
+struct edges, 21 : 7 unweighted). Iterate with range-for when the edge index isn't needed.
 
 ```cpp
 // unweighted
-vector<int> es[MX];
-es[u].push_back(v), es[v].push_back(u);
+vector<int> to[MX];
+to[u].push_back(v), to[v].push_back(u);
 // ...
-for (int nxt : es[now])
+for (int nxt : to[now])
 {
     // visit neighbour nxt
 }
@@ -238,7 +279,7 @@ struct Edge
     int to, w;
 };
 vector<Edge> es[MX];
-es[u].emplace_back(Edge{v, w}), es[v].emplace_back(Edge{u, w});
+es[u].push_back(Edge{v, w}), es[v].push_back(Edge{u, w});
 // ...
 for (Edge e : es[now])
 {
@@ -269,7 +310,9 @@ void addEdge(int u, int v, int val)
 
 Lazy Dijkstra: a min-heap via a reversed `operator<`, `0x3f` infinity (a whole-array fill, so
 `memset` rather than a `1e9` literal), finalize each node the first time it's popped. Graph held as
-`vector<Edge>`, neighbours walked with range-for.
+`vector<Edge>`, neighbours walked with range-for. The heap payload is a second small struct —
+`Path { int v, w; }` (or `Node { int id, dis; }`) — pushed with `push_back`/`push`, never a lambda
+comparator.
 
 ```cpp
 #define MX 100005
@@ -279,10 +322,10 @@ struct Edge
 };
 struct Path
 {
-    int t, d;
+    int v, w;
     bool operator<(const Path &oth) const
     {
-        return d > oth.d;
+        return w > oth.w;
     }
 };
 vector<Edge> es[MX];
@@ -295,20 +338,20 @@ int main()
     {
         int u, v, w;
         cin >> u >> v >> w;
-        es[u].emplace_back(Edge{v, w});
+        es[u].push_back(Edge{v, w});
     }
     memset(dis, 0x3f, sizeof(dis));
     q.push(Path{s, 0});
     while (q.size())
     {
-        int f = q.top().t, d = q.top().d;
+        int now = q.top().v, d = q.top().w;
         q.pop();
-        if (dis[f] != 0x3f3f3f3f)
+        if (dis[now] != 0x3f3f3f3f)
         {
             continue;
         }
-        dis[f] = d;
-        for (Edge e : es[f])
+        dis[now] = d;
+        for (Edge e : es[now])
         {
             if (dis[e.to] != 0x3f3f3f3f)
             {
@@ -329,67 +372,67 @@ int main()
 
 ## 8. Binary-lifting LCA
 
-Iterative BFS to fix depth and immediate parent (safe on a degenerate chain — no recursion to blow
-the stack), then double the ancestor table. `anc[i][j]` is the 2^j-th ancestor of `i`; loops use the
-literal height (18 covers n ≤ 2.6e5), no `#define LOG`. Because the table is `anc[i][j]`, the build
-loop is `for (j) for (i)` — outer over the level, inner over the node.
+**A recursive DFS, not a BFS.** All 8 recent files that build an `anc[][]` table use
+`void dfs(int now, int from)`; `void bfs` appears in 2 files in the whole corpus. The local build
+links with `-Wl,-stack=1073741824`, so a 1 GB stack makes recursion safe even on a degenerate
+chain. Two details that are easy to get wrong:
+
+- **The doubling happens at the top of `dfs`, for `now` alone** — not as a separate
+  `for (j) for (i)` pass after the traversal. Each node's row is complete because its parent's
+  row was filled before the recursive call.
+- **Depth lives in `h[]`** (29 recent files) rather than `dep[]` (5), and the parent is skipped
+  with the `from` guard instead of a `vis[]` array.
+
+`anc[i][j]` is the 2^j-th ancestor of `i`; loops use the literal height (19 covers n ≤ 5e5) — a
+`#define LG 19` is acceptable but the literal is more common.
 
 ```cpp
-#define MX 200005
-vector<int> es[MX];
-queue<int> que;
-int n, dep[MX], anc[MX][20], vis[MX];
-void bfs()
+#define MX 300005
+vector<int> to[MX];
+int n, h[MX], anc[MX][20];
+void dfs(int now, int from)
 {
-    que.push(1), vis[1] = 1;
-    while (que.size())
+    for (int i = 1; i <= 19; i++)
     {
-        int now = que.front();
-        que.pop();
-        for (int nxt : es[now])
-        {
-            if (vis[nxt])
-            {
-                continue;
-            }
-            vis[nxt] = 1, dep[nxt] = dep[now] + 1, anc[nxt][0] = now;
-            que.push(nxt);
-        }
+        anc[now][i] = anc[anc[now][i - 1]][i - 1];
     }
-    for (int j = 1; j <= 18; j++)
+    for (int nxt : to[now])
     {
-        for (int i = 1; i <= n; i++)
+        if (nxt == from)
         {
-            anc[i][j] = anc[anc[i][j - 1]][j - 1];
+            continue;
         }
+        anc[nxt][0] = now, h[nxt] = h[now] + 1;
+        dfs(nxt, now);
     }
 }
-int lca(int x, int y)
+int lca(int a, int b)
 {
-    if (dep[x] < dep[y])
+    if (h[a] < h[b])
     {
-        swap(x, y);
+        swap(a, b);
     }
-    for (int i = 18; i >= 0; i--)
+    for (int i = 19; i >= 0; i--)
     {
-        if (dep[anc[x][i]] >= dep[y])
+        if (h[anc[a][i]] >= h[b])
         {
-            x = anc[x][i];
+            a = anc[a][i];
         }
     }
-    if (x == y)
+    if (a == b)
     {
-        return x;
+        return a;
     }
-    for (int i = 18; i >= 0; i--)
+    for (int i = 19; i >= 0; i--)
     {
-        if (anc[x][i] != anc[y][i])
+        if (anc[a][i] != anc[b][i])
         {
-            x = anc[x][i], y = anc[y][i];
+            a = anc[a][i], b = anc[b][i];
         }
     }
-    return anc[x][0];
+    return anc[a][0];
 }
+// root it with: h[1] = 1, dfs(1, 0);
 ```
 
 ---
@@ -397,37 +440,50 @@ int lca(int x, int y)
 ## 9. Grid BFS
 
 Offsets live in a global `ms[4][2]` table (never `dx`/`dy`) on its own declaration line; the
-candidate cell is `nx`/`ny`; the queue is a global `queue<pair<int, int>> q` pushed with
-`q.emplace(make_pair(x, y))` and read through `.first`/`.second`. The bounds check and the visited
-check merge into one `||` guard with `continue`. Use `ms[8][2]` for eight directions, or a second
-table `ms2[4][2]` for a distinct move set.
+candidate cell is `nx`/`ny`. **The cell carried through the queue is a two-field `struct Node`**,
+pushed with `q.push(Node{x, y})` — 30 recent files push a braced struct this way, against 2 that
+use `q.emplace(make_pair(...))`. The bounds check and the visited check merge into one `||` guard
+with `continue`. Use `ms[8][2]` for eight directions, or a second table `ms2[4][2]` for a distinct
+move set.
+
+The **grid itself is usually a `string` array** (19 recent files vs 10 for `char mp[][]`), read
+with `cin >> s[i]`. A `string` grid is 0-based, so the bounds read `nx >= 0 && nx < n` — one of
+the few places the 1-based default doesn't apply.
 
 ```cpp
 #define MX 1005
+struct Node
+{
+    int x, y;
+};
+queue<Node> q;
+string s[MX];
 int n, m, dis[MX][MX], vis[MX][MX];
 int ms[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-char mp[MX][MX];
-queue<pair<int, int>> q;
 void bfs(int sx, int sy)
 {
-    q.emplace(make_pair(sx, sy)), vis[sx][sy] = 1;
+    q.push(Node{sx, sy}), vis[sx][sy] = 1;
     while (q.size())
     {
-        int x = q.front().first, y = q.front().second;
+        int x = q.front().x, y = q.front().y;
         q.pop();
         for (int i = 0; i < 4; i++)
         {
             int nx = x + ms[i][0], ny = y + ms[i][1];
-            if (nx < 1 || nx > n || ny < 1 || ny > m || mp[nx][ny] == '#' || vis[nx][ny])
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m || s[nx][ny] == '#' || vis[nx][ny])
             {
                 continue;
             }
             vis[nx][ny] = 1, dis[nx][ny] = dis[x][y] + 1;
-            q.emplace(make_pair(nx, ny));
+            q.push(Node{nx, ny});
         }
     }
 }
 ```
+
+When the queue has to carry a third value and no struct is warranted, `queue<pair<int, int>>` with
+`q.emplace(make_pair(now, from))` and `.first`/`.second` is the secondary form (5 files) — read it,
+but reach for `struct Node` first.
 
 ---
 
@@ -504,4 +560,35 @@ int main()
     }
     return 0;
 }
+```
+
+---
+
+## 13. `__int128` output
+
+`__int128` is the overflow escape hatch (11 recent files) — an intermediate product past
+`long long`, or a comparison that has to be exact. `cin`/`cout` don't know the type, so printing
+goes through a short recursive `write()` on `putchar`. Use `unsigned __int128` when the value is
+known non-negative.
+
+```cpp
+void write(unsigned __int128 x)
+{
+    if (x > 9)
+    {
+        write(x / 10);
+    }
+    putchar(x % 10 + '0');
+}
+// ...
+unsigned __int128 ans = 1;
+ans = ans * n * (n + 1) * (n * 2 + 1) / 6;
+write(ans);
+```
+
+Reading is the mirror image (a `read()` loop accumulating into an `__int128`), but far more often
+the value is read as `long long` and widened at the point of use:
+
+```cpp
+__int128 res = min((__int128)b, (__int128)n * a);
 ```

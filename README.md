@@ -13,9 +13,9 @@
 | 路径 | 说明 |
 |---|---|
 | [`skills/shanirez-style/SKILL.md`](skills/shanirez-style/SKILL.md) | 风格指纹本体：骨架、Allman 大括号、零空行、1-based、命名、I/O、惯用写法 |
-| [`skills/shanirez-style/references/templates.md`](skills/shanirez-style/references/templates.md) | 12 份从语料里摘出来的算法模板（DSU、线段树、Dijkstra、倍增 LCA、网格 BFS…） |
+| [`skills/shanirez-style/references/templates.md`](skills/shanirez-style/references/templates.md) | 13 份从语料里摘出来的算法模板（DSU、线段树、Dijkstra、倍增 LCA、网格 BFS、`__int128` 输出…） |
 
-风格结论全部来自 `OJCode` 语料的实测统计（全量约 3200 个 `.cpp`，其中近 2 年新增约 950 个）。习惯发生过漂移的地方，以近 2 年为准。
+风格结论全部来自 `OJCode` 语料的实测统计（全量 3208 个 `.cpp`，其中近 2 年新增且现存的 940 个）。习惯发生过漂移的地方，以近 2 年为准。
 
 ## 安装
 
