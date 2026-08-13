@@ -1,0 +1,20 @@
+{
+  "name": "shanirezskills",
+  "version": "0.1.0",
+  "description": "Competitive-programming C++ style plus K-12 lesson planning and differentiation skills.",
+  "author": {
+    "name": "ShanireZ",
+    "url": "https://github.com/ShanireZ"
+  },
+  "homepage": "https://github.com/ShanireZ/Shanirez-Style",
+  "repository": "https://github.com/ShanireZ/Shanirez-Style",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "competitive-programming",
+    "cpp",
+    "education",
+    "k12"
+  ],
+  "skills": "./skills/"
+}

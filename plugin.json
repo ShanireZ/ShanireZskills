@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "shanirezskills",
+  "version": "0.1.0",
+  "description": "ShanireZ's public Agent Skills bundle for competitive-programming C++ style and K-12 lesson design.",
+  "author": {
+    "name": "ShanireZ",
+    "url": "https://github.com/ShanireZ"
+  },
+  "homepage": "https://github.com/ShanireZ/Shanirez-Style",
+  "repository": "https://github.com/ShanireZ/Shanirez-Style",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "competitive-programming",
+    "cpp",
+    "education",
+    "k12"
+  ]
+}

@@ -1,2 +1,6 @@
 # 跨平台一致：仓库内与工作区均为 LF
 * text=auto eol=lf
+
+# Vendored verbatim from anthropics/k12-teacher-skills; preserve upstream blobs.
+skills/k12-lesson-planning/** whitespace=-trailing-space,-blank-at-eof
+skills/k12-lesson-differentiation/** whitespace=-trailing-space,-blank-at-eof
