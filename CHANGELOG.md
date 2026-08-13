@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Rename the GitHub repository, CNB mirror, and local project directory to `ShanireZskills`.
+- Remove the `v0.1.0` Git tag while keeping `0.1.0` as the current marketplace package version.
+
 ## 0.1.0 — 2026-08-13
 
 - Publish the repository as the `ShanireZskills` marketplace.

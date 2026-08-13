@@ -26,28 +26,28 @@
 全局安装全部 skill：
 
 ```bash
-npx skills add ShanireZ/Shanirez-Style -g
+npx skills add ShanireZ/ShanireZskills -g
 ```
 
 只安装一个 skill：
 
 ```bash
-npx skills add ShanireZ/Shanirez-Style -g --skill shanirez-style
-npx skills add ShanireZ/Shanirez-Style -g --skill k12-lesson-planning
-npx skills add ShanireZ/Shanirez-Style -g --skill k12-lesson-differentiation
+npx skills add ShanireZ/ShanireZskills -g --skill shanirez-style
+npx skills add ShanireZ/ShanireZskills -g --skill k12-lesson-planning
+npx skills add ShanireZ/ShanireZskills -g --skill k12-lesson-differentiation
 ```
 
 ### Claude Code marketplace
 
 ```bash
-claude plugin marketplace add ShanireZ/Shanirez-Style
+claude plugin marketplace add ShanireZ/ShanireZskills
 claude plugin install shanirezskills@shanirezskills
 ```
 
 ### Codex / ChatGPT marketplace
 
 ```bash
-codex plugin marketplace add ShanireZ/Shanirez-Style
+codex plugin marketplace add ShanireZ/ShanireZskills
 ```
 
 随后在 Codex CLI 中打开 `/plugins`，从 `ShanireZskills` 市场安装同名 bundle。安装后新开一个会话，让三个 skill 进入新的上下文。
@@ -55,7 +55,7 @@ codex plugin marketplace add ShanireZ/Shanirez-Style
 ### GitHub Copilot CLI marketplace
 
 ```bash
-copilot plugin marketplace add ShanireZ/Shanirez-Style
+copilot plugin marketplace add ShanireZ/ShanireZskills
 copilot plugin install shanirezskills@shanirezskills
 ```
 
@@ -85,4 +85,4 @@ copilot plugin install shanirezskills@shanirezskills
 
 ## 仓库
 
-GitHub 为公开主仓库，[CNB](https://cnb.cool/Round1/Shanirez-Style) 为镜像，由 workspace 根目录的 `sync-github-cnb.ps1` 同步。
+GitHub 为公开主仓库，[CNB](https://cnb.cool/Round1/ShanireZskills) 为镜像，由 workspace 根目录的 `sync-github-cnb.ps1` 同步。

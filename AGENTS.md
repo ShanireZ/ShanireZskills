@@ -4,7 +4,7 @@
 
 ## What this repo is
 
-A public Agent Skills marketplace and plugin bundle. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/Shanirez-Style) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+A public Agent Skills marketplace and plugin bundle. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
 
 The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. One native plugin bundle exposes three independently discoverable Agent Skills:
 

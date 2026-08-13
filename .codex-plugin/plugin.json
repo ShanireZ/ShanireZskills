@@ -6,8 +6,8 @@
     "name": "ShanireZ",
     "url": "https://github.com/ShanireZ"
   },
-  "homepage": "https://github.com/ShanireZ/Shanirez-Style",
-  "repository": "https://github.com/ShanireZ/Shanirez-Style",
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
   "license": "GPL-3.0",
   "keywords": [
     "agent-skills",
@@ -28,7 +28,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/ShanireZ/Shanirez-Style",
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
     "defaultPrompt": [
       "Solve this online-judge problem in ShanireZ's C++ style.",
       "Create a standards-aligned K-12 lesson plan.",
