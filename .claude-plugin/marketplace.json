@@ -9,9 +9,9 @@
   "version": "0.1.0",
   "plugins": [
     {
-      "name": "shanirezskills",
-      "source": "./",
-      "description": "Competitive-programming C++ style plus K-12 lesson planning and differentiation skills.",
+      "name": "shanirez-style",
+      "source": "./plugins/shanirez-style",
+      "description": "ShanireZ's personal C++14 style for competitive-programming and online-judge solutions.",
       "version": "0.1.0",
       "author": {
         "name": "ShanireZ"
@@ -20,9 +20,39 @@
       "keywords": [
         "agent-skills",
         "competitive-programming",
-        "cpp",
+        "cpp"
+      ]
+    },
+    {
+      "name": "k12-lesson-planning",
+      "source": "./plugins/k12-lesson-planning",
+      "description": "Create standards-aligned K-12 lesson plans, student materials, and observation templates.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anthropic / Learning Commons"
+      },
+      "category": "education",
+      "keywords": [
+        "agent-skills",
         "education",
-        "k12"
+        "k12",
+        "lesson-planning"
+      ]
+    },
+    {
+      "name": "k12-lesson-differentiation",
+      "source": "./plugins/k12-lesson-differentiation",
+      "description": "Adapt an existing K-12 lesson for students at different proficiency levels and needs.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anthropic / Learning Commons"
+      },
+      "category": "education",
+      "keywords": [
+        "agent-skills",
+        "education",
+        "k12",
+        "differentiated-instruction"
       ]
     }
   ]

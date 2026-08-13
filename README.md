@@ -7,15 +7,15 @@
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757.svg?style=flat-square&logo=claude&logoColor=white)
 ![OpenAI Codex](https://img.shields.io/badge/Codex-compatible-412991.svg?style=flat-square&logo=openai&logoColor=white)
 
-`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 3 个 skill。
+`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 3 个可独立安装的 skill；市场不再把它们捆绑成一个聚合插件。
 
 ## Skills
 
 | Skill                                                                      | 用途                                       | 来源与许可                               |
 | -------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------------- |
-| [`shanirez-style`](skills/shanirez-style/SKILL.md)                         | 结构清晰的算法竞赛 C++14 代码风格          | 原创，GPL-3.0                            |
-| [`k12-lesson-planning`](skills/k12-lesson-planning/SKILL.md)               | 创建符合教学标准的 K-12 课程方案与课堂材料 | Anthropic / Learning Commons，Apache-2.0 |
-| [`k12-lesson-differentiation`](skills/k12-lesson-differentiation/SKILL.md) | 将已有课程分层适配不同熟练度与学生需求     | Anthropic / Learning Commons，Apache-2.0 |
+| [`shanirez-style`](plugins/shanirez-style/skills/shanirez-style/SKILL.md)                                         | 结构清晰的算法竞赛 C++14 代码风格          | 原创，GPL-3.0                            |
+| [`k12-lesson-planning`](plugins/k12-lesson-planning/skills/k12-lesson-planning/SKILL.md)                           | 创建符合教学标准的 K-12 课程方案与课堂材料 | Anthropic / Learning Commons，Apache-2.0 |
+| [`k12-lesson-differentiation`](plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/SKILL.md)     | 将已有课程分层适配不同熟练度与学生需求     | Anthropic / Learning Commons，Apache-2.0 |
 
 ## 安装
 
@@ -37,27 +37,44 @@ npx skills add ShanireZ/ShanireZskills -g --skill k12-lesson-differentiation
 
 ### Claude Code marketplace
 
+添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
+
 ```bash
 claude plugin marketplace add ShanireZ/ShanireZskills
-claude plugin install shanirezskills@shanirezskills
+claude plugin install shanirez-style@shanirezskills
+claude plugin install k12-lesson-planning@shanirezskills
+claude plugin install k12-lesson-differentiation@shanirezskills
 ```
 
 ### Codex / ChatGPT marketplace
 
+添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
+
 ```bash
 codex plugin marketplace add ShanireZ/ShanireZskills
+codex plugin add shanirez-style@shanirezskills
+codex plugin add k12-lesson-planning@shanirezskills
+codex plugin add k12-lesson-differentiation@shanirezskills
 ```
 
 ### GitHub Copilot CLI marketplace
 
+添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
+
 ```bash
 copilot plugin marketplace add ShanireZ/ShanireZskills
-copilot plugin install shanirezskills@shanirezskills
+copilot plugin install shanirez-style@shanirezskills
+copilot plugin install k12-lesson-planning@shanirezskills
+copilot plugin install k12-lesson-differentiation@shanirezskills
 ```
 
 ### Agent Plugins 客户端
 
-仓库根目录的 [`plugin.json`](plugin.json) 是 Agent Plugins v1 入口，兼容客户端可以直接导入本仓库。
+每个目录下的 Agent Plugins v1 manifest 都是独立入口，兼容客户端按需导入：
+
+- [`plugins/shanirez-style/plugin.json`](plugins/shanirez-style/plugin.json)
+- [`plugins/k12-lesson-planning/plugin.json`](plugins/k12-lesson-planning/plugin.json)
+- [`plugins/k12-lesson-differentiation/plugin.json`](plugins/k12-lesson-differentiation/plugin.json)
 
 ## 许可
 

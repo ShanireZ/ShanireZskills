@@ -1,7 +1,7 @@
 {
-  "name": "shanirezskills",
+  "name": "shanirez-style",
   "version": "0.1.0",
-  "description": "Competitive-programming C++ style plus K-12 lesson planning and differentiation skills.",
+  "description": "ShanireZ's personal C++14 style for competitive-programming and online-judge solutions.",
   "author": {
     "name": "ShanireZ",
     "url": "https://github.com/ShanireZ"
@@ -13,8 +13,7 @@
     "agent-skills",
     "competitive-programming",
     "cpp",
-    "education",
-    "k12"
+    "online-judge"
   ],
   "skills": "./skills/"
 }

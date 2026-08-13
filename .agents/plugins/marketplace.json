@@ -5,11 +5,34 @@
   },
   "plugins": [
     {
-      "name": "shanirezskills",
+      "name": "shanirez-style",
       "source": {
-        "source": "url",
-        "url": "https://github.com/ShanireZ/ShanireZskills.git",
-        "ref": "main"
+        "source": "local",
+        "path": "./plugins/shanirez-style"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    },
+    {
+      "name": "k12-lesson-planning",
+      "source": {
+        "source": "local",
+        "path": "./plugins/k12-lesson-planning"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    },
+    {
+      "name": "k12-lesson-differentiation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/k12-lesson-differentiation"
       },
       "policy": {
         "installation": "AVAILABLE",

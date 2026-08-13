@@ -1,7 +1,7 @@
 {
-  "name": "shanirezskills",
+  "name": "shanirez-style",
   "version": "0.1.0",
-  "description": "Competitive-programming C++ style plus K-12 lesson planning and differentiation skills.",
+  "description": "ShanireZ's personal C++14 style for competitive-programming and online-judge solutions.",
   "author": {
     "name": "ShanireZ",
     "url": "https://github.com/ShanireZ"
@@ -13,14 +13,13 @@
     "agent-skills",
     "competitive-programming",
     "cpp",
-    "education",
-    "k12"
+    "online-judge"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "ShanireZskills",
-    "shortDescription": "C++ OJ style and K-12 teaching workflows",
-    "longDescription": "Use ShanireZ's competitive-programming C++ style, build standards-aligned K-12 lesson plans, or differentiate existing lessons for varied proficiency levels.",
+    "displayName": "ShanireZ C++ Style",
+    "shortDescription": "Competitive-programming C++14 style",
+    "longDescription": "Write, debug, optimize, and refactor online-judge solutions in ShanireZ's measured C++14 coding style.",
     "developerName": "ShanireZ",
     "category": "Education",
     "capabilities": [
@@ -31,8 +30,7 @@
     "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
     "defaultPrompt": [
       "Solve this online-judge problem in ShanireZ's C++ style.",
-      "Create a standards-aligned K-12 lesson plan.",
-      "Differentiate this existing lesson for student needs."
+      "Refactor this contest solution to match ShanireZ's style."
     ],
     "brandColor": "#00599C",
     "screenshots": []

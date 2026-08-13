@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Split the former all-in-one marketplace package into three independently installable, single-skill plugins.
 - Rename the GitHub repository, CNB mirror, and local project directory to `ShanireZskills`.
 - Remove the `v0.1.0` Git tag while keeping `0.1.0` as the current marketplace package version.
 

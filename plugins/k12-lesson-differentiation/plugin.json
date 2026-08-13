@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "k12-lesson-differentiation",
+  "version": "0.1.0",
+  "description": "Adapt an existing K-12 lesson for students at different proficiency levels and needs.",
+  "author": {
+    "name": "Anthropic / Learning Commons",
+    "url": "https://github.com/anthropics/k12-teacher-skills"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "education",
+    "k12",
+    "differentiated-instruction"
+  ],
+  "skills": "./skills/"
+}

@@ -4,29 +4,32 @@
 
 ## What this repo is
 
-A public Agent Skills marketplace and plugin bundle. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+A public Agent Skills marketplace containing three independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
 
-The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. One native plugin bundle exposes three independently discoverable Agent Skills:
+The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. Each plugin contains exactly one same-named Agent Skill:
 
 ```text
-skills/
+plugins/
 ├── shanirez-style/             # first-party, GPL-3.0
+│   └── skills/shanirez-style/
 ├── k12-lesson-planning/        # vendored, Apache-2.0
+│   └── skills/k12-lesson-planning/
 └── k12-lesson-differentiation/ # vendored, Apache-2.0
+    └── skills/k12-lesson-differentiation/
 ```
 
 Distribution adapters live at:
 
-- `plugin.json` — Agent Plugins v1.
-- `.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json` — Codex/ChatGPT.
-- `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
-- `skills/` — skills CLI and direct Agent Skills discovery.
+- `plugins/*/plugin.json` — Agent Plugins v1 manifests.
+- `plugins/*/.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json` — Codex/ChatGPT.
+- `plugins/*/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
+- `plugins/*/skills/` — skills CLI and direct Agent Skills discovery.
 
 Keep `0.1.0`-style versions synchronized across all plugin and marketplace manifests and `CHANGELOG.md`.
 
 ## First-party style source of truth
 
-Every statistic in `skills/shanirez-style/SKILL.md` is measured against the [`../OJCode`](../OJCode) corpus — do not add, soften, or strengthen a claim without re-running the count. Method:
+Every statistic in `plugins/shanirez-style/skills/shanirez-style/SKILL.md` is measured against the [`../OJCode`](../OJCode) corpus — do not add, soften, or strengthen a claim without re-running the count. Method:
 
 ```bash
 cd D:/Workspace/OJCode
@@ -46,7 +49,7 @@ xargs -a /tmp/recent.txt -d '\n' grep -lIE '<pattern>' | wc -l
 
 ## Vendored K-12 skills
 
-`skills/k12-lesson-planning/` and `skills/k12-lesson-differentiation/` are copied verbatim from `anthropics/k12-teacher-skills` commit `6fc400329540e068516bd34aa78120d89e5e4e8b`.
+`plugins/k12-lesson-planning/skills/k12-lesson-planning/` and `plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/` are copied verbatim from `anthropics/k12-teacher-skills` commit `6fc400329540e068516bd34aa78120d89e5e4e8b`.
 
 - Preserve each directory's Apache-2.0 `LICENSE`, SPDX header, and reference `NOTICE` files.
 - Preserve the root `NOTICE` attribution when redistributing either skill.
@@ -56,7 +59,7 @@ xargs -a /tmp/recent.txt -d '\n' grep -lIE '<pattern>' | wc -l
 
 ## Format constraints
 
-- `skills/shanirez-style/SKILL.md` keeps only `name` and `description` in frontmatter. Its name must equal the directory name, and it stays under 500 lines.
+- `plugins/shanirez-style/skills/shanirez-style/SKILL.md` keeps only `name` and `description` in frontmatter. Its name must equal the directory name, and it stays under 500 lines.
 - The vendored K-12 skills retain their upstream `license` frontmatter field and Apache notices.
 - `.gitattributes` pins text files to LF.
 - The no-blank-lines/no-trailing-newline rule applies to generated OJ `.cpp` and C++ samples, not Markdown generally.
