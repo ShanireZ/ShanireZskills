@@ -1,0 +1,38 @@
+{
+  "name": "pick-ui-library",
+  "version": "0.1.0",
+  "description": "Choose a trusted frontend library for common UI, motion, charting, state, and styling tasks.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "frontend",
+    "ui",
+    "libraries"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pick UI Library",
+    "shortDescription": "Choose a trusted frontend library",
+    "longDescription": "Choose one opinionated, trusted library for a frontend task, taking the project's existing dependencies into account and avoiding unnecessary churn.",
+    "developerName": "Emil Kowalski",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Pick the right library for this frontend task.",
+      "Choose a library that fits this existing stack."
+    ],
+    "brandColor": "#4F46E5",
+    "screenshots": []
+  }
+}

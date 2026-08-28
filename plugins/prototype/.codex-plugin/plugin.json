@@ -1,0 +1,38 @@
+{
+  "name": "prototype",
+  "version": "0.1.0",
+  "description": "Build several distinct UI variants behind a visual picker, then promote the chosen direction.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "ui",
+    "prototyping",
+    "design"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Prototype",
+    "shortDescription": "Explore distinct UI directions",
+    "longDescription": "Build multiple genuinely different UI variants behind a visual picker, let the user compare them live, and promote the selected direction.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Prototype three distinct versions of this UI.",
+      "Build visual variants for this component."
+    ],
+    "brandColor": "#DB2777",
+    "screenshots": []
+  }
+}

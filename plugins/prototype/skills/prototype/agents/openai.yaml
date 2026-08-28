@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Explore distinct UI directions with a live picker"
+  default_prompt: "Use $prototype to build and compare distinct UI variants."
+
+policy:
+  allow_implicit_invocation: false

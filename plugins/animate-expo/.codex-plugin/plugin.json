@@ -1,0 +1,39 @@
+{
+  "name": "animate-expo",
+  "version": "0.1.0",
+  "description": "Build performant React Native and Expo animations, gestures, transitions, and haptics.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "expo",
+    "react-native",
+    "motion"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Animate Expo",
+    "shortDescription": "Craft performant Expo motion",
+    "longDescription": "Build polished React Native and Expo motion with Reanimated, Gesture Handler, Expo Router, and haptics while keeping work off the JS thread.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Animate this Expo interaction without frame drops.",
+      "Build this gesture and transition for React Native."
+    ],
+    "brandColor": "#6D28D9",
+    "screenshots": []
+  }
+}

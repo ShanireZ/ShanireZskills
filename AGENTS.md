@@ -4,25 +4,29 @@
 
 ## What this repo is
 
-A public Agent Skills marketplace containing three independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+A public Agent Skills marketplace containing 15 independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
 
 The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. Each plugin contains exactly one same-named Agent Skill:
 
 ```text
 plugins/
 ├── shanirez-style/             # first-party, GPL-3.0
-│   └── skills/shanirez-style/
 ├── k12-lesson-planning/        # vendored, Apache-2.0
-│   └── skills/k12-lesson-planning/
-└── k12-lesson-differentiation/ # vendored, Apache-2.0
-    └── skills/k12-lesson-differentiation/
+├── k12-lesson-differentiation/ # vendored, Apache-2.0
+└── <12 Emil Kowalski skills>/  # vendored, MIT
+    └── skills/<same-name>/
+
+.claude-plugins/                # Claude-only source mirrors for 3 explicit-invocation skills
+├── pick-ui-library/
+├── prototype/
+└── review-animations/
 ```
 
 Distribution adapters live at:
 
 - `plugins/*/plugin.json` — Agent Plugins v1 manifests.
 - `plugins/*/.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json` — Codex/ChatGPT.
-- `plugins/*/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
+- `plugins/*/.claude-plugin/plugin.json`, `.claude-plugins/*/.claude-plugin/plugin.json`, and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
 - `plugins/*/skills/` — skills CLI and direct Agent Skills discovery.
 
 Keep `0.1.0`-style versions synchronized across all plugin and marketplace manifests and `CHANGELOG.md`.
@@ -57,10 +61,20 @@ xargs -a /tmp/recent.txt -d '\n' grep -lIE '<pattern>' | wc -l
 - The optional upstream `.mcp.json` is intentionally not vendored; both skills document their no-connector fallback.
 - `.gitattributes` disables whitespace diagnostics only for these two directories so `git diff --check` can pass without changing upstream blobs.
 
+## Vendored Emil Kowalski skills
+
+The 12 skill directories imported from `emilkowalski/skills` are pinned to commit `d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7` and remain MIT-licensed. Preserve the root `NOTICE` attribution and the MIT `LICENSE` copies at both plugin and skill roots.
+
+- Nine primary skill trees are copied verbatim. Do not silently edit their upstream files; record any intentional adaptation in `NOTICE` and `CHANGELOG.md`.
+- `pick-ui-library`, `prototype`, and `review-animations` use `agents/openai.yaml` with `policy.allow_implicit_invocation: false` in their primary plugin trees because that is Codex's invocation-policy contract. Their Markdown bodies remain upstream-identical; only the invocation frontmatter is translated, and `review-animations` adds an explicit-only sentence to its description.
+- `.claude-plugins/{pick-ui-library,prototype,review-animations}/` are exact upstream source mirrors used only by `.claude-plugin/marketplace.json`. They retain Claude's `disable-model-invocation: true`; keep them byte-identical to the pinned upstream skill trees.
+- The Claude mirror directories are packaging adapters, not extra marketplace products. The public marketplace still contains 15 names, not 18.
+
 ## Format constraints
 
 - `plugins/shanirez-style/skills/shanirez-style/SKILL.md` keeps only `name` and `description` in frontmatter. Its name must equal the directory name, and it stays under 500 lines.
 - The vendored K-12 skills retain their upstream `license` frontmatter field and Apache notices.
+- Vendored Emil Kowalski skills retain their upstream frontmatter except for the three documented cross-client invocation-policy translations above.
 - `.gitattributes` pins text files to LF.
 - The no-blank-lines/no-trailing-newline rule applies to generated OJ `.cpp` and C++ samples, not Markdown generally.
 - Templates are code: compile changed C++ templates with `g++ -std=c++14 -O2 -Wall -m64 -static-libgcc` and run a hand-checked input.

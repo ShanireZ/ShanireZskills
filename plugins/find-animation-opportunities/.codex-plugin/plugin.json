@@ -1,0 +1,37 @@
+{
+  "name": "find-animation-opportunities",
+  "version": "0.1.0",
+  "description": "Find UI areas that genuinely benefit from motion and propose exact values without implementing.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "audit",
+    "ui"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Find Animation Opportunities",
+    "shortDescription": "Find worthwhile places for motion",
+    "longDescription": "Inspect a UI or codebase for places that genuinely benefit from motion, reject unnecessary animation, and propose concrete values without changing source.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Find worthwhile animation opportunities in this UI.",
+      "Suggest motion that would make this interface feel alive."
+    ],
+    "brandColor": "#0EA5E9",
+    "screenshots": []
+  }
+}

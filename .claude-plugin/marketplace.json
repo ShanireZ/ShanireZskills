@@ -54,6 +54,200 @@
         "k12",
         "differentiated-instruction"
       ]
+    },
+    {
+      "name": "animate",
+      "source": "./plugins/animate",
+      "description": "Build polished web animations with deliberate motion, easing, duration, interruption, and exit behavior.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "web",
+        "motion",
+        "ui"
+      ]
+    },
+    {
+      "name": "animate-expo",
+      "source": "./plugins/animate-expo",
+      "description": "Build performant React Native and Expo animations, gestures, transitions, and haptics.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "expo",
+        "react-native",
+        "motion"
+      ]
+    },
+    {
+      "name": "animation-vocabulary",
+      "source": "./plugins/animation-vocabulary",
+      "description": "Identify exact terms for vaguely described web animation and motion effects.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "motion",
+        "design"
+      ]
+    },
+    {
+      "name": "apple-design",
+      "source": "./plugins/apple-design",
+      "description": "Apply Apple's interface design and fluid-motion principles to web experiences.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "apple-design",
+        "ui",
+        "animation"
+      ]
+    },
+    {
+      "name": "emil-design-eng",
+      "source": "./plugins/emil-design-eng",
+      "description": "Apply Emil Kowalski's UI polish, component-design, and animation principles.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "ui",
+        "design-engineering",
+        "animation"
+      ]
+    },
+    {
+      "name": "find-animation-opportunities",
+      "source": "./plugins/find-animation-opportunities",
+      "description": "Find UI areas that genuinely benefit from motion and propose exact values without implementing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "audit",
+        "ui"
+      ]
+    },
+    {
+      "name": "improve-animations",
+      "source": "./plugins/improve-animations",
+      "description": "Audit a codebase's motion and produce prioritized, implementation-ready improvement plans.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "audit",
+        "planning"
+      ]
+    },
+    {
+      "name": "prototype",
+      "source": "./.claude-plugins/prototype",
+      "description": "Build several distinct UI variants behind a visual picker, then promote the chosen direction.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "ui",
+        "prototyping",
+        "design"
+      ]
+    },
+    {
+      "name": "review-animations",
+      "source": "./.claude-plugins/review-animations",
+      "description": "Review animation code against a strict craft, performance, interaction, and accessibility bar.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "animation",
+        "code-review",
+        "ui"
+      ]
+    },
+    {
+      "name": "ask-sonner",
+      "source": "./plugins/ask-sonner",
+      "description": "Install, configure, style, and troubleshoot the Sonner React toast library.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "development",
+      "keywords": [
+        "agent-skills",
+        "react",
+        "sonner",
+        "toast"
+      ]
+    },
+    {
+      "name": "pick-ui-library",
+      "source": "./.claude-plugins/pick-ui-library",
+      "description": "Choose a trusted frontend library for common UI, motion, charting, state, and styling tasks.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "development",
+      "keywords": [
+        "agent-skills",
+        "frontend",
+        "ui",
+        "libraries"
+      ]
+    },
+    {
+      "name": "write-swift",
+      "source": "./plugins/write-swift",
+      "description": "Write and review modern Swift with strong modeling, concurrency, performance, and testing practices.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Emil Kowalski"
+      },
+      "category": "development",
+      "keywords": [
+        "agent-skills",
+        "swift",
+        "concurrency",
+        "ios"
+      ]
     }
   ]
 }

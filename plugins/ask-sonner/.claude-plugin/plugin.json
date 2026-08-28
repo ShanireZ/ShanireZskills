@@ -1,0 +1,19 @@
+{
+  "name": "ask-sonner",
+  "version": "0.1.0",
+  "description": "Install, configure, style, and troubleshoot the Sonner React toast library.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "react",
+    "sonner",
+    "toast"
+  ],
+  "skills": "./skills/"
+}

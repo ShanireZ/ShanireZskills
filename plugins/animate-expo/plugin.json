@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "animate-expo",
+  "version": "0.1.0",
+  "description": "Build performant React Native and Expo animations, gestures, transitions, and haptics.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "expo",
+    "react-native",
+    "motion"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pick-ui-library",
+  "version": "0.1.0",
+  "description": "Choose a trusted frontend library for common UI, motion, charting, state, and styling tasks.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "frontend",
+    "ui",
+    "libraries"
+  ],
+  "skills": "./skills/"
+}

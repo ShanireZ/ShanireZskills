@@ -1,0 +1,7 @@
+interface:
+  display_name: "Review Animations"
+  short_description: "Review animation quality against a strict craft bar"
+  default_prompt: "Use $review-animations to review the motion in this change."
+
+policy:
+  allow_implicit_invocation: false

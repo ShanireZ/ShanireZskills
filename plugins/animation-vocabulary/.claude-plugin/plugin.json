@@ -1,0 +1,19 @@
+{
+  "name": "animation-vocabulary",
+  "version": "0.1.0",
+  "description": "Identify exact terms for vaguely described web animation and motion effects.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "motion",
+    "design"
+  ],
+  "skills": "./skills/"
+}

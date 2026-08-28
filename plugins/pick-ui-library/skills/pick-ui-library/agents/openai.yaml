@@ -1,0 +1,7 @@
+interface:
+  display_name: "Pick UI Library"
+  short_description: "Choose a trusted library for a frontend task"
+  default_prompt: "Use $pick-ui-library to choose a trusted library for this frontend task."
+
+policy:
+  allow_implicit_invocation: false

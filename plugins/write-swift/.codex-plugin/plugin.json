@@ -1,0 +1,38 @@
+{
+  "name": "write-swift",
+  "version": "0.1.0",
+  "description": "Write and review modern Swift with strong modeling, concurrency, performance, and testing practices.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "swift",
+    "concurrency",
+    "ios"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Write Swift",
+    "shortDescription": "Write modern Swift well",
+    "longDescription": "Write, review, and migrate modern Swift using value types, Swift 6 concurrency, protocols and generics, sound API design, performance practices, and Swift Testing.",
+    "developerName": "Emil Kowalski",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Write this feature in modern Swift.",
+      "Review this Swift code for concurrency and performance."
+    ],
+    "brandColor": "#F05138",
+    "screenshots": []
+  }
+}

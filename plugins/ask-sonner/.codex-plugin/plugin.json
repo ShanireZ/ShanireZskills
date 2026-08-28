@@ -1,0 +1,38 @@
+{
+  "name": "ask-sonner",
+  "version": "0.1.0",
+  "description": "Install, configure, style, and troubleshoot the Sonner React toast library.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "react",
+    "sonner",
+    "toast"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ask Sonner",
+    "shortDescription": "Build and troubleshoot Sonner toasts",
+    "longDescription": "Use Sonner correctly in React applications, including setup, toast patterns, styling, theming, positioning, multiple toasters, and common fixes.",
+    "developerName": "Emil Kowalski",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Set up Sonner in this React app.",
+      "Fix this Sonner toast issue."
+    ],
+    "brandColor": "#111827",
+    "screenshots": []
+  }
+}

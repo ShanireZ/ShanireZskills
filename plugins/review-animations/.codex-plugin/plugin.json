@@ -1,0 +1,37 @@
+{
+  "name": "review-animations",
+  "version": "0.1.0",
+  "description": "Review animation code against a strict craft, performance, interaction, and accessibility bar.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "code-review",
+    "ui"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Review Animations",
+    "shortDescription": "Review animation craftsmanship",
+    "longDescription": "Review animation and motion code for purpose, easing, timing, physicality, interruptibility, performance, accessibility, and cohesion.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Review the animations in this change.",
+      "Audit this motion code against a high craft bar."
+    ],
+    "brandColor": "#DC2626",
+    "screenshots": []
+  }
+}

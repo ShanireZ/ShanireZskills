@@ -7,17 +7,31 @@
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757.svg?style=flat-square&logo=claude&logoColor=white)
 ![OpenAI Codex](https://img.shields.io/badge/Codex-compatible-412991.svg?style=flat-square&logo=openai&logoColor=white)
 
-`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 3 个可独立安装的 skill；市场不再把它们捆绑成一个聚合插件。
+`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 15 个可独立安装的 skill；市场不把它们捆绑成一个聚合插件。
 
 ## Skills
 
-| Skill                                                                      | 用途                                       | 来源与许可                               |
-| -------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------------- |
-| [`shanirez-style`](plugins/shanirez-style/skills/shanirez-style/SKILL.md)                                         | 结构清晰的算法竞赛 C++14 代码风格          | 原创，GPL-3.0                            |
-| [`k12-lesson-planning`](plugins/k12-lesson-planning/skills/k12-lesson-planning/SKILL.md)                           | 创建符合教学标准的 K-12 课程方案与课堂材料 | Anthropic / Learning Commons，Apache-2.0 |
-| [`k12-lesson-differentiation`](plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/SKILL.md)     | 将已有课程分层适配不同熟练度与学生需求     | Anthropic / Learning Commons，Apache-2.0 |
+| Skill | 用途 | 来源与许可 |
+| --- | --- | --- |
+| [`shanirez-style`](plugins/shanirez-style/skills/shanirez-style/SKILL.md) | 结构清晰的算法竞赛 C++14 代码风格 | 原创，GPL-3.0 |
+| [`k12-lesson-planning`](plugins/k12-lesson-planning/skills/k12-lesson-planning/SKILL.md) | 创建符合教学标准的 K-12 课程方案与课堂材料 | Anthropic / Learning Commons，Apache-2.0 |
+| [`k12-lesson-differentiation`](plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/SKILL.md) | 将已有课程分层适配不同熟练度与学生需求 | Anthropic / Learning Commons，Apache-2.0 |
+| [`emil-design-eng`](plugins/emil-design-eng/skills/emil-design-eng/SKILL.md) | 打磨 UI、组件设计和动画决策 | Emil Kowalski，MIT |
+| [`animate`](plugins/animate/skills/animate/SKILL.md) | 从零实现有目的、可中断的 Web 动画 | Emil Kowalski，MIT |
+| [`animate-expo`](plugins/animate-expo/skills/animate-expo/SKILL.md) | 实现高性能 React Native / Expo 动画、手势与触觉反馈 | Emil Kowalski，MIT |
+| [`review-animations`](plugins/review-animations/skills/review-animations/SKILL.md) | 按严格工艺标准审查动画代码 | Emil Kowalski，MIT |
+| [`improve-animations`](plugins/improve-animations/skills/improve-animations/SKILL.md) | 审计代码库动效并生成可执行改进计划 | Emil Kowalski，MIT |
+| [`find-animation-opportunities`](plugins/find-animation-opportunities/skills/find-animation-opportunities/SKILL.md) | 找出真正值得加入动效的界面位置 | Emil Kowalski，MIT |
+| [`animation-vocabulary`](plugins/animation-vocabulary/skills/animation-vocabulary/SKILL.md) | 将模糊的动效描述定位到准确术语 | Emil Kowalski，MIT |
+| [`apple-design`](plugins/apple-design/skills/apple-design/SKILL.md) | 将 Apple 的界面与流畅动效原则应用到 Web | Emil Kowalski，MIT |
+| [`write-swift`](plugins/write-swift/skills/write-swift/SKILL.md) | 编写和审查现代 Swift、并发、性能与测试代码 | Emil Kowalski，MIT |
+| [`pick-ui-library`](plugins/pick-ui-library/skills/pick-ui-library/SKILL.md) | 从精选清单中为前端任务选择合适的库 | Emil Kowalski，MIT |
+| [`prototype`](plugins/prototype/skills/prototype/SKILL.md) | 创建多个差异化 UI 方案并通过可视选择器比较 | Emil Kowalski，MIT |
+| [`ask-sonner`](plugins/ask-sonner/skills/ask-sonner/SKILL.md) | 安装、配置、样式化和排查 Sonner toast | Emil Kowalski，MIT |
 
 ## 安装
+
+以下单项安装命令均以 `animate` 为例，可替换为上表中的任一 skill 名称。
 
 ### skills CLI：Codex、Claude Code、Cursor、OpenCode 等
 
@@ -27,57 +41,48 @@
 npx skills add ShanireZ/ShanireZskills -g
 ```
 
-单独安装指定 skill：
+单独安装表格中的任一 skill：
 
 ```bash
-npx skills add ShanireZ/ShanireZskills -g --skill shanirez-style
-npx skills add ShanireZ/ShanireZskills -g --skill k12-lesson-planning
-npx skills add ShanireZ/ShanireZskills -g --skill k12-lesson-differentiation
+npx skills add ShanireZ/ShanireZskills -g --skill animate
 ```
 
 ### Claude Code marketplace
 
-添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
-
 ```bash
 claude plugin marketplace add ShanireZ/ShanireZskills
-claude plugin install shanirez-style@shanirezskills
-claude plugin install k12-lesson-planning@shanirezskills
-claude plugin install k12-lesson-differentiation@shanirezskills
+claude plugin install animate@shanirezskills
 ```
+
+`pick-ui-library`、`prototype` 和 `review-animations` 保留上游的 Claude 显式调用契约；安装后分别通过 `/pick-ui-library:pick-ui-library`、`/prototype:prototype` 和 `/review-animations:review-animations` 调用。
 
 ### Codex / ChatGPT marketplace
 
-添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
-
 ```bash
 codex plugin marketplace add ShanireZ/ShanireZskills
-codex plugin add shanirez-style@shanirezskills
-codex plugin add k12-lesson-planning@shanirezskills
-codex plugin add k12-lesson-differentiation@shanirezskills
+codex plugin add animate@shanirezskills
 ```
+
+上述 3 个显式调用 skill 在 Codex 中通过各自的 `agents/openai.yaml` 禁止隐式调用，可用 `$pick-ui-library`、`$prototype` 和 `$review-animations` 显式调用。
 
 ### GitHub Copilot CLI marketplace
 
-添加市场后，只安装需要的插件（下面 3 条安装命令按需选择）：
-
 ```bash
 copilot plugin marketplace add ShanireZ/ShanireZskills
-copilot plugin install shanirez-style@shanirezskills
-copilot plugin install k12-lesson-planning@shanirezskills
-copilot plugin install k12-lesson-differentiation@shanirezskills
+copilot plugin install animate@shanirezskills
 ```
 
 ### Agent Plugins 客户端
 
-每个目录下的 Agent Plugins v1 manifest 都是独立入口，兼容客户端按需导入：
+每个 `plugins/<skill-name>/plugin.json` 都是独立的 Agent Plugins v1 入口；可安装名称与上表完全一致。
 
-- [`plugins/shanirez-style/plugin.json`](plugins/shanirez-style/plugin.json)
-- [`plugins/k12-lesson-planning/plugin.json`](plugins/k12-lesson-planning/plugin.json)
-- [`plugins/k12-lesson-differentiation/plugin.json`](plugins/k12-lesson-differentiation/plugin.json)
-
-## 许可
+## 来源与许可
 
 本仓库原创内容采用 [GNU General Public License v3.0](LICENSE) 发布。
 
-第三方内容继续采用各自的 `LICENSE` 和归属声明，仓库根目录的 [`NOTICE`](NOTICE) 记录了来源提交与上游版权信息，第三方文件的原许可和 NOTICE 义务不会消失。
+第三方内容继续采用各自的 `LICENSE` 和归属声明：
+
+- Anthropic / Learning Commons 的两个 K-12 skill 使用 Apache-2.0。
+- Emil Kowalski 的 12 个设计与工程 skill 使用 MIT，固定来源 commit 记录在 [`NOTICE`](NOTICE)。
+
+每个主插件根目录及其 skill 目录都包含适用的许可证副本。Claude 专用镜像仅用于保留 3 个 skill 的 `disable-model-invocation: true` 语义，不增加新的市场条目或许可条件。

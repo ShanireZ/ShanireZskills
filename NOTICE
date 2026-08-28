@@ -15,3 +15,20 @@ and Learning Commons under a collaboration agreement.
 
 The imported skills remain licensed under Apache License 2.0. Their
 directories contain the applicable LICENSE and reference NOTICE files.
+
+This distribution also includes material copied from:
+https://github.com/emilkowalski/skills
+upstream commit d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7
+
+Copyright (c) 2026 Emil Kowalski
+
+The 12 imported design and engineering skills remain licensed under the MIT
+License. Each plugin root and skill directory contains the applicable LICENSE.
+
+For cross-client compatibility, the primary copies of `pick-ui-library`,
+`prototype`, and `review-animations` translate Claude's
+`disable-model-invocation: true` frontmatter into Codex's
+`agents/openai.yaml` invocation policy; `review-animations` also adds the same
+explicit-only boundary to its description. Their Markdown bodies are otherwise
+unchanged. Exact upstream copies are retained under `.claude-plugins/` and are
+the sources used by the Claude marketplace.

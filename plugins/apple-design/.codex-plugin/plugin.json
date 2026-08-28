@@ -1,0 +1,38 @@
+{
+  "name": "apple-design",
+  "version": "0.1.0",
+  "description": "Apply Apple's interface design and fluid-motion principles to web experiences.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "apple-design",
+    "ui",
+    "animation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Apple Design",
+    "shortDescription": "Apply Apple design principles",
+    "longDescription": "Apply Apple's principles for interface design, gesture-driven interaction, typography, materials, depth, accessibility, and fluid motion to the web.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Apply Apple-style interaction principles to this UI.",
+      "Review this interface for fluid, physical motion."
+    ],
+    "brandColor": "#111827",
+    "screenshots": []
+  }
+}

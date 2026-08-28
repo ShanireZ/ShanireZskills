@@ -39,6 +39,150 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Education"
+    },
+    {
+      "name": "animate",
+      "source": {
+        "source": "local",
+        "path": "./plugins/animate"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "animate-expo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/animate-expo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "animation-vocabulary",
+      "source": {
+        "source": "local",
+        "path": "./plugins/animation-vocabulary"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "apple-design",
+      "source": {
+        "source": "local",
+        "path": "./plugins/apple-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "emil-design-eng",
+      "source": {
+        "source": "local",
+        "path": "./plugins/emil-design-eng"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "find-animation-opportunities",
+      "source": {
+        "source": "local",
+        "path": "./plugins/find-animation-opportunities"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "improve-animations",
+      "source": {
+        "source": "local",
+        "path": "./plugins/improve-animations"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "prototype",
+      "source": {
+        "source": "local",
+        "path": "./plugins/prototype"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "review-animations",
+      "source": {
+        "source": "local",
+        "path": "./plugins/review-animations"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "ask-sonner",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ask-sonner"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "pick-ui-library",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pick-ui-library"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "write-swift",
+      "source": {
+        "source": "local",
+        "path": "./plugins/write-swift"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

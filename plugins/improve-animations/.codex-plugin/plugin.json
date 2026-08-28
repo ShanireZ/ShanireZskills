@@ -1,0 +1,37 @@
+{
+  "name": "improve-animations",
+  "version": "0.1.0",
+  "description": "Audit a codebase's motion and produce prioritized, implementation-ready improvement plans.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "audit",
+    "planning"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Improve Animations",
+    "shortDescription": "Plan animation improvements",
+    "longDescription": "Audit animation and motion across a codebase, then produce a prioritized set of self-contained implementation plans without editing the source.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Audit the animations in this codebase.",
+      "Create a prioritized plan to improve this app's motion."
+    ],
+    "brandColor": "#0891B2",
+    "screenshots": []
+  }
+}

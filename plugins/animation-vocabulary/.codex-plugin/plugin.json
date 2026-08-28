@@ -1,0 +1,37 @@
+{
+  "name": "animation-vocabulary",
+  "version": "0.1.0",
+  "description": "Identify exact terms for vaguely described web animation and motion effects.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "animation",
+    "motion",
+    "design"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Animation Vocabulary",
+    "shortDescription": "Name animation and motion effects",
+    "longDescription": "Turn vague descriptions of web animation and motion effects into the precise vocabulary designers and engineers use.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "What is this animation effect called?",
+      "Name the motion pattern I am describing."
+    ],
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}

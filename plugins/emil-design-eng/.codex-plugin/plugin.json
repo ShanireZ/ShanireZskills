@@ -1,0 +1,38 @@
+{
+  "name": "emil-design-eng",
+  "version": "0.1.0",
+  "description": "Apply Emil Kowalski's UI polish, component-design, and animation principles.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "ui",
+    "design-engineering",
+    "animation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Emil Design Engineering",
+    "shortDescription": "Polish UI and motion details",
+    "longDescription": "Use Emil Kowalski's design-engineering principles to improve interface polish, component decisions, animation quality, and invisible interaction details.",
+    "developerName": "Emil Kowalski",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Polish this interface using Emil's design principles.",
+      "Improve the motion and interaction details in this UI."
+    ],
+    "brandColor": "#7C3AED",
+    "screenshots": []
+  }
+}

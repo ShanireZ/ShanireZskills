@@ -1,0 +1,19 @@
+{
+  "name": "write-swift",
+  "version": "0.1.0",
+  "description": "Write and review modern Swift with strong modeling, concurrency, performance, and testing practices.",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "swift",
+    "concurrency",
+    "ios"
+  ],
+  "skills": "./skills/"
+}
