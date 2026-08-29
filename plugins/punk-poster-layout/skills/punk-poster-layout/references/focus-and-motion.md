@@ -2,6 +2,8 @@
 
 本表用于单一主角、强符号骨架、明确视线路径和双区域分割。每项都提供图像模型与 HTML/CSS 的结构表达；替换方括号内容，并把所选条目融合进完整任务提示词。
 
+表中的 `3:4`、`5×6`、栏数、比例、偏移和具体尺寸都是可调的起始示例，不是不可变规范。按用户给定画幅、内容量、最小字号、最小单元宽度、裁切安全和媒介约束调整，并在交付中说明实际采用的值。
+
 ## 01｜中轴对称 Axial Symmetry
 
 所有主要元素围绕一条中轴组织，左右视觉重量接近，产生庄重、稳定与仪式感。
@@ -308,7 +310,7 @@ Keywords: S-curve composition, serpentine flow, graceful movement, sequential no
 HTML/CSS 提示：
 
 ```text
-用 SVG path 或两个大圆弧伪元素构成 S 曲线；三个内容节点用 absolute + 百分比坐标附着路径；正文保持水平；在窄屏按相同比例缩放整个 poster。
+用 SVG path 或两个大圆弧伪元素构成 S 曲线；三个内容节点用 absolute + 百分比坐标附着路径；正文保持水平。窄屏或 200% 缩放时，只有在最小字号、裁切安全和交互尺寸仍满足时才整体等比缩放；否则按语义 DOM 顺序重排节点，同时保留入口、转折、终点及相邻关系，不强求同一几何曲线。
 ```
 
 ## 15｜L 型锚定 L-Shaped Anchor
@@ -352,5 +354,5 @@ Keywords: vertical split composition, dual-panel layout, juxtaposition, 60/40 ba
 HTML/CSS 提示：
 
 ```text
-使用 5 列 CSS Grid，左区 3 列、右区 2 列；两侧独立背景与 content wrapper；跨缝标题设置 grid-column:2/5、z-index:2；移动端仍保留并排比例。
+使用 5 列 CSS Grid，左区 3 列、右区 2 列；两侧独立背景与 content wrapper；跨缝标题设置 grid-column:2/5、z-index:2。窄屏时仅在两侧都满足最小单元宽度、最小字号和安全裁切时保留并排；否则可改为上下或顺序分区，但保持 A/B 的语义顺序、对比关系和 60/40 主次。
 ```
