@@ -24,9 +24,9 @@
       ]
     },
     {
-      "name": "k12-lesson-planning",
-      "source": "./plugins/k12-lesson-planning",
-      "description": "Create standards-aligned K-12 lesson plans, student materials, and observation templates.",
+      "name": "k12-lesson-plan-creation",
+      "source": "./plugins/k12-lesson-plan-creation",
+      "description": "Create standards-aligned K-12 lesson plans, student materials, assessments, and observation templates.",
       "version": "0.1.0",
       "author": {
         "name": "Anthropic / Learning Commons"
@@ -36,7 +36,7 @@
         "agent-skills",
         "education",
         "k12",
-        "lesson-planning"
+        "lesson-plan-creation"
       ]
     },
     {
@@ -247,6 +247,90 @@
         "swift",
         "concurrency",
         "ios"
+      ]
+    },
+    {
+      "name": "punk-cover",
+      "source": "./plugins/punk-cover",
+      "description": "Generate social and editorial cover images from articles, posts, and topics using curated Punk visual styles.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AdrianPunk and contributors"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "cover",
+        "image-generation",
+        "visual-design",
+        "social-media"
+      ]
+    },
+    {
+      "name": "punk-avatar",
+      "source": "./plugins/punk-avatar",
+      "description": "Generate avatars and keepsake portraits from photos or descriptions using curated Punk visual styles.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AdrianPunk and contributors"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "avatar",
+        "image-generation",
+        "portrait",
+        "visual-design"
+      ]
+    },
+    {
+      "name": "punk-poster-layout",
+      "source": "./plugins/punk-poster-layout",
+      "description": "Choose and implement poster compositions from a 32-layout catalog for image prompts and HTML/CSS.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AdrianPunk and contributors"
+      },
+      "category": "design",
+      "keywords": [
+        "agent-skills",
+        "poster",
+        "layout",
+        "composition",
+        "css-grid"
+      ]
+    },
+    {
+      "name": "k12-lesson-prep",
+      "source": "./plugins/k12-lesson-prep",
+      "description": "Prepare to teach an existing K-12 lesson by working through its key task and producing a concise teacher prep note.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anthropic / Learning Commons"
+      },
+      "category": "education",
+      "keywords": [
+        "agent-skills",
+        "education",
+        "k12",
+        "lesson-prep"
+      ]
+    },
+    {
+      "name": "k12-check-for-understanding",
+      "source": "./plugins/k12-check-for-understanding",
+      "description": "Create 1-3 item math checks for understanding with misconception-based distractors and next-step teacher guidance.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anthropic / Learning Commons"
+      },
+      "category": "education",
+      "keywords": [
+        "agent-skills",
+        "education",
+        "k12",
+        "formative-assessment",
+        "math"
       ]
     }
   ]

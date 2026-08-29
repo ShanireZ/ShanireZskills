@@ -3,7 +3,7 @@ Copyright 2026 ShanireZ
 
 This distribution includes material copied from:
 https://github.com/anthropics/k12-teacher-skills
-upstream commit 6fc400329540e068516bd34aa78120d89e5e4e8b
+upstream commit 281eb8d41fe2837d911541c9bbb870b58add804c
 
 The following upstream notice is preserved verbatim:
 
@@ -32,3 +32,30 @@ For cross-client compatibility, the primary copies of `pick-ui-library`,
 explicit-only boundary to its description. Their Markdown bodies are otherwise
 unchanged. Exact upstream copies are retained under `.claude-plugins/` and are
 the sources used by the Claude marketplace.
+
+This distribution also includes material copied from:
+https://github.com/adrianpunk/Punk-Skill
+upstream commit 50ea29b65b98788f9ed1df62818dbe530855bfb3
+
+The upstream README credits AdrianPunk for prompt design and style direction
+and jinchenma94 for repository maintenance.
+
+The imported `punk-cover` and `punk-avatar` skills and their required style
+atoms are distributed under GNU GPL v3.0. This licensing status was confirmed
+to the ShanireZskills maintainer on 2026-08-29. The pinned upstream commit does
+not contain a license file, so this distribution supplies the canonical GPLv3
+text at each plugin root and skill root.
+
+The `punk-poster-layout` skill is an Agent Skill adaptation of two articles by
+Punk Space / AdrianPunk:
+
+https://mp.weixin.qq.com/s/HZHnjGwxIa9tBel3Xky1ag
+"AI 做海报、HTML构图手册：16 种控制焦点与动势的海报构图——上册"
+
+https://mp.weixin.qq.com/s/1y6PzWf4mij5je0pExIQFA
+"AI 做海报、HTML 构图手册：16 种控制网格、图文关系与信息密度的海报构图——下册"
+
+The skill restructures the two articles' 32 composition systems, prompt
+patterns, HTML/CSS guidance, and review criteria for progressive Agent Skills
+loading. The ShanireZskills distribution releases this adaptation under GNU
+GPL v3.0 while preserving the source authorship above.

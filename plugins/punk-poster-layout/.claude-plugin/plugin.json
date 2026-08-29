@@ -1,0 +1,20 @@
+{
+  "name": "punk-poster-layout",
+  "version": "0.1.0",
+  "description": "Choose and implement poster compositions from a 32-layout catalog for image prompts and HTML/CSS.",
+  "author": {
+    "name": "AdrianPunk and contributors",
+    "url": "https://github.com/adrianpunk"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "poster",
+    "layout",
+    "composition",
+    "css-grid"
+  ],
+  "skills": "./skills/"
+}

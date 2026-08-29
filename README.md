@@ -7,15 +7,17 @@
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757.svg?style=flat-square&logo=claude&logoColor=white)
 ![OpenAI Codex](https://img.shields.io/badge/Codex-compatible-412991.svg?style=flat-square&logo=openai&logoColor=white)
 
-`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 15 个可独立安装的 skill；市场不把它们捆绑成一个聚合插件。
+`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 20 个可独立安装的 skill；市场不把它们捆绑成一个聚合插件。
 
 ## Skills
 
 | Skill | 用途 | 来源与许可 |
 | --- | --- | --- |
 | [`shanirez-style`](plugins/shanirez-style/skills/shanirez-style/SKILL.md) | 结构清晰的算法竞赛 C++14 代码风格 | 原创，GPL-3.0 |
-| [`k12-lesson-planning`](plugins/k12-lesson-planning/skills/k12-lesson-planning/SKILL.md) | 创建符合教学标准的 K-12 课程方案与课堂材料 | Anthropic / Learning Commons，Apache-2.0 |
+| [`k12-lesson-plan-creation`](plugins/k12-lesson-plan-creation/skills/k12-lesson-plan-creation/SKILL.md) | 创建符合教学标准的 K-12 课程方案、课堂材料与评估 | Anthropic / Learning Commons，Apache-2.0 |
 | [`k12-lesson-differentiation`](plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/SKILL.md) | 将已有课程分层适配不同熟练度与学生需求 | Anthropic / Learning Commons，Apache-2.0 |
+| [`k12-lesson-prep`](plugins/k12-lesson-prep/skills/k12-lesson-prep/SKILL.md) | 帮助教师内化已有课程的关键任务并生成课前准备笔记 | Anthropic / Learning Commons，Apache-2.0 |
+| [`k12-check-for-understanding`](plugins/k12-check-for-understanding/skills/k12-check-for-understanding/SKILL.md) | 为数学主题创建基于常见误解的形成性理解检查 | Anthropic / Learning Commons，Apache-2.0 |
 | [`emil-design-eng`](plugins/emil-design-eng/skills/emil-design-eng/SKILL.md) | 打磨 UI、组件设计和动画决策 | Emil Kowalski，MIT |
 | [`animate`](plugins/animate/skills/animate/SKILL.md) | 从零实现有目的、可中断的 Web 动画 | Emil Kowalski，MIT |
 | [`animate-expo`](plugins/animate-expo/skills/animate-expo/SKILL.md) | 实现高性能 React Native / Expo 动画、手势与触觉反馈 | Emil Kowalski，MIT |
@@ -28,6 +30,9 @@
 | [`pick-ui-library`](plugins/pick-ui-library/skills/pick-ui-library/SKILL.md) | 从精选清单中为前端任务选择合适的库 | Emil Kowalski，MIT |
 | [`prototype`](plugins/prototype/skills/prototype/SKILL.md) | 创建多个差异化 UI 方案并通过可视选择器比较 | Emil Kowalski，MIT |
 | [`ask-sonner`](plugins/ask-sonner/skills/ask-sonner/SKILL.md) | 安装、配置、样式化和排查 Sonner toast | Emil Kowalski，MIT |
+| [`punk-cover`](plugins/punk-cover/skills/punk-cover/SKILL.md) | 将文章、帖子和主题生成平台适配的封面图或复用提示词 | AdrianPunk 与贡献者，GPL-3.0 |
+| [`punk-avatar`](plugins/punk-avatar/skills/punk-avatar/SKILL.md) | 将人物、宠物、物品照片或描述生成头像与纪念卡 | AdrianPunk 与贡献者，GPL-3.0 |
+| [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 从 32 种构图中选择海报骨架，并落地图像提示词或 HTML/CSS | AdrianPunk 与贡献者，GPL-3.0 |
 
 ## 安装
 
@@ -82,7 +87,8 @@ copilot plugin install animate@shanirezskills
 
 第三方内容继续采用各自的 `LICENSE` 和归属声明：
 
-- Anthropic / Learning Commons 的两个 K-12 skill 使用 Apache-2.0。
+- Anthropic / Learning Commons 的四个 K-12 skill 使用 Apache-2.0，固定来源 commit 记录在 [`NOTICE`](NOTICE)。
 - Emil Kowalski 的 12 个设计与工程 skill 使用 MIT，固定来源 commit 记录在 [`NOTICE`](NOTICE)。
+- AdrianPunk 与贡献者的三个 Punk skill 使用 GPL-3.0；两个视觉生成 skill 的固定来源 commit，以及构图 skill 的文章来源和许可记录在 [`NOTICE`](NOTICE)。
 
 每个主插件根目录及其 skill 目录都包含适用的许可证副本。Claude 专用镜像仅用于保留 3 个 skill 的 `disable-model-invocation: true` 语义，不增加新的市场条目或许可条件。

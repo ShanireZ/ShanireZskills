@@ -4,15 +4,20 @@
 
 ## What this repo is
 
-A public Agent Skills marketplace containing 15 independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+A public Agent Skills marketplace containing 20 independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
 
 The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. Each plugin contains exactly one same-named Agent Skill:
 
 ```text
 plugins/
 ├── shanirez-style/             # first-party, GPL-3.0
-├── k12-lesson-planning/        # vendored, Apache-2.0
+├── k12-lesson-plan-creation/   # vendored, Apache-2.0
 ├── k12-lesson-differentiation/ # vendored, Apache-2.0
+├── k12-lesson-prep/            # vendored, Apache-2.0
+├── k12-check-for-understanding/ # vendored, Apache-2.0; math only
+├── punk-cover/                 # vendored, GPL-3.0; 25 cover style atoms
+├── punk-avatar/                # vendored, GPL-3.0; 6 avatar style atoms
+├── punk-poster-layout/         # article-derived, GPL-3.0; 32 composition systems
 └── <12 Emil Kowalski skills>/  # vendored, MIT
     └── skills/<same-name>/
 
@@ -53,13 +58,13 @@ xargs -a /tmp/recent.txt -d '\n' grep -lIE '<pattern>' | wc -l
 
 ## Vendored K-12 skills
 
-`plugins/k12-lesson-planning/skills/k12-lesson-planning/` and `plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/` are copied verbatim from `anthropics/k12-teacher-skills` commit `6fc400329540e068516bd34aa78120d89e5e4e8b`.
+The four skill trees under `plugins/k12-{lesson-plan-creation,lesson-differentiation,lesson-prep,check-for-understanding}/skills/` are copied verbatim from `anthropics/k12-teacher-skills` commit `281eb8d41fe2837d911541c9bbb870b58add804c`.
 
 - Preserve each directory's Apache-2.0 `LICENSE`, SPDX header, and reference `NOTICE` files.
-- Preserve the root `NOTICE` attribution when redistributing either skill.
+- Preserve the root `NOTICE` attribution when redistributing any K-12 skill.
 - Do not silently edit vendored files. If a local change is necessary, add the prominent modification notice required by Apache-2.0 and record it in `CHANGELOG.md`.
-- The optional upstream `.mcp.json` is intentionally not vendored; both skills document their no-connector fallback.
-- `.gitattributes` disables whitespace diagnostics only for these two directories so `git diff --check` can pass without changing upstream blobs.
+- The optional upstream `.mcp.json` is intentionally not vendored; skills that can use the Learning Commons connector document their no-connector fallback.
+- `.gitattributes` disables whitespace diagnostics only for these four directories so `git diff --check` can pass without changing upstream blobs.
 
 ## Vendored Emil Kowalski skills
 
@@ -68,7 +73,24 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 - Nine primary skill trees are copied verbatim. Do not silently edit their upstream files; record any intentional adaptation in `NOTICE` and `CHANGELOG.md`.
 - `pick-ui-library`, `prototype`, and `review-animations` use `agents/openai.yaml` with `policy.allow_implicit_invocation: false` in their primary plugin trees because that is Codex's invocation-policy contract. Their Markdown bodies remain upstream-identical; only the invocation frontmatter is translated, and `review-animations` adds an explicit-only sentence to its description.
 - `.claude-plugins/{pick-ui-library,prototype,review-animations}/` are exact upstream source mirrors used only by `.claude-plugin/marketplace.json`. They retain Claude's `disable-model-invocation: true`; keep them byte-identical to the pinned upstream skill trees.
-- The Claude mirror directories are packaging adapters, not extra marketplace products. The public marketplace still contains 15 names, not 18.
+- The Claude mirror directories are packaging adapters, not extra marketplace products. The public marketplace contains 20 names, not 23.
+
+## Vendored Punk skills
+
+`plugins/punk-cover/skills/punk-cover/`, `plugins/punk-avatar/skills/punk-avatar/`, and their required `styles/` subsets are copied from `adrianpunk/Punk-Skill` commit `50ea29b65b98788f9ed1df62818dbe530855bfb3` and distributed under GPL-3.0.
+
+- Preserve the upstream `SKILL.md`, `agents/openai.yaml`, references, and selected style atoms verbatim. Record any intentional adaptation in `NOTICE` and `CHANGELOG.md`.
+- The pinned upstream commit has no license file. GPL-3.0 was confirmed to the maintainer on 2026-08-29; canonical GPLv3 copies at each plugin and skill root are packaging additions, not upstream blobs.
+- `punk-cover` carries only its 25 cover-capable style atoms; `punk-avatar` carries only its six avatar-capable style atoms. Their `../../styles/{style-id}` runtime paths depend on those plugin-root `styles/` directories.
+- Upstream screenshots and repository-level validation scripts are not runtime dependencies and are intentionally not vendored.
+
+## Punk poster-layout skill
+
+`plugins/punk-poster-layout/skills/punk-poster-layout/` is an Agent Skill adaptation of two Punk Space articles by AdrianPunk, not a verbatim tree from the pinned `Punk-Skill` commit. The source URLs and attribution are recorded in `NOTICE`, and ShanireZskills distributes the adaptation under GPL-3.0.
+
+- Preserve all 32 named composition systems, their image-prompt and HTML/CSS expressions, and the review criteria when reorganizing the references.
+- Keep the skill's role structural: it selects and encodes focal flow, hierarchy, grids, image-text relationships, and density. It does not own the visual style atoms used by `punk-cover`.
+- The original MHTML snapshots are source material outside the plugin and are not runtime assets. Do not add incomplete web archives or lazy-loaded remote images to the plugin package.
 
 ## Format constraints
 

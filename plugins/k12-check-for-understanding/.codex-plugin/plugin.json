@@ -1,0 +1,39 @@
+{
+  "name": "k12-check-for-understanding",
+  "version": "0.1.0",
+  "description": "Create 1-3 item math checks for understanding with misconception-based distractors and next-step teacher guidance.",
+  "author": {
+    "name": "Anthropic / Learning Commons",
+    "url": "https://github.com/anthropics/k12-teacher-skills"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "education",
+    "k12",
+    "formative-assessment",
+    "math"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "K-12 Check for Understanding",
+    "shortDescription": "Build misconception-aware formative math checks",
+    "longDescription": "Create a focused 1-3 item math check for understanding plus teacher guidance that maps likely responses to specific next steps.",
+    "developerName": "Anthropic / Learning Commons",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Create a math check for understanding for this standard.",
+      "Build a short formative check for this math concept."
+    ],
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}

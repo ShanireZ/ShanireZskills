@@ -1,0 +1,4 @@
+interface:
+  display_name: "Punk Poster Layout"
+  short_description: "Structure posters with 32 composition systems"
+  default_prompt: "Use $punk-poster-layout to choose and implement a strong composition for this poster brief."

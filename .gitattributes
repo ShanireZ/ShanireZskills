@@ -2,5 +2,7 @@
 * text=auto eol=lf
 
 # Vendored verbatim from anthropics/k12-teacher-skills; preserve upstream blobs.
-plugins/k12-lesson-planning/skills/k12-lesson-planning/** whitespace=-trailing-space,-blank-at-eof
+plugins/k12-lesson-plan-creation/skills/k12-lesson-plan-creation/** whitespace=-trailing-space,-blank-at-eof
 plugins/k12-lesson-differentiation/skills/k12-lesson-differentiation/** whitespace=-trailing-space,-blank-at-eof
+plugins/k12-lesson-prep/skills/k12-lesson-prep/** whitespace=-trailing-space,-blank-at-eof
+plugins/k12-check-for-understanding/skills/k12-check-for-understanding/** whitespace=-trailing-space,-blank-at-eof

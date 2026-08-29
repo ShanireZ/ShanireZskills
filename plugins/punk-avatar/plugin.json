@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "punk-avatar",
+  "version": "0.1.0",
+  "description": "Generate avatars and keepsake portraits from photos or descriptions using curated Punk visual styles.",
+  "author": {
+    "name": "AdrianPunk and contributors",
+    "url": "https://github.com/adrianpunk"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "avatar",
+    "image-generation",
+    "portrait",
+    "visual-design"
+  ],
+  "skills": "./skills/"
+}

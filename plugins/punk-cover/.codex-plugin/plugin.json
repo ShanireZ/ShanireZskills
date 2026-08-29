@@ -1,0 +1,39 @@
+{
+  "name": "punk-cover",
+  "version": "0.1.0",
+  "description": "Generate social and editorial cover images from articles, posts, and topics using curated Punk visual styles.",
+  "author": {
+    "name": "AdrianPunk and contributors",
+    "url": "https://github.com/adrianpunk"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "cover",
+    "image-generation",
+    "visual-design",
+    "social-media"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Punk Cover",
+    "shortDescription": "Generate covers from curated Punk styles",
+    "longDescription": "Turn articles, social posts, and topic drafts into platform-aware editorial covers or reusable image prompts using curated Punk visual styles.",
+    "developerName": "AdrianPunk and contributors",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Turn this article into a polished social cover.",
+      "Create a reusable cover prompt in a Punk visual style."
+    ],
+    "brandColor": "#E11D48",
+    "screenshots": []
+  }
+}

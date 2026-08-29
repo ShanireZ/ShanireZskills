@@ -1,0 +1,39 @@
+{
+  "name": "punk-poster-layout",
+  "version": "0.1.0",
+  "description": "Choose and implement poster compositions from a 32-layout catalog for image prompts and HTML/CSS.",
+  "author": {
+    "name": "AdrianPunk and contributors",
+    "url": "https://github.com/adrianpunk"
+  },
+  "homepage": "https://github.com/ShanireZ/ShanireZskills",
+  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "license": "GPL-3.0",
+  "keywords": [
+    "agent-skills",
+    "poster",
+    "layout",
+    "composition",
+    "css-grid"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Punk Poster Layout",
+    "shortDescription": "Structure posters with 32 composition systems",
+    "longDescription": "Select, prompt, implement, and review poster layouts with explicit focal flow, hierarchy, grids, image-text relationships, and density controls.",
+    "developerName": "AdrianPunk and contributors",
+    "category": "Design",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "defaultPrompt": [
+      "Choose a composition and write an image-generation prompt for this poster.",
+      "Turn this poster brief into a precise HTML/CSS layout."
+    ],
+    "brandColor": "#F97316",
+    "screenshots": []
+  }
+}

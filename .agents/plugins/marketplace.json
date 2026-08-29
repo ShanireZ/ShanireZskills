@@ -17,10 +17,10 @@
       "category": "Education"
     },
     {
-      "name": "k12-lesson-planning",
+      "name": "k12-lesson-plan-creation",
       "source": {
         "source": "local",
-        "path": "./plugins/k12-lesson-planning"
+        "path": "./plugins/k12-lesson-plan-creation"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -183,6 +183,66 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "punk-cover",
+      "source": {
+        "source": "local",
+        "path": "./plugins/punk-cover"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "punk-avatar",
+      "source": {
+        "source": "local",
+        "path": "./plugins/punk-avatar"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "punk-poster-layout",
+      "source": {
+        "source": "local",
+        "path": "./plugins/punk-poster-layout"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "k12-lesson-prep",
+      "source": {
+        "source": "local",
+        "path": "./plugins/k12-lesson-prep"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    },
+    {
+      "name": "k12-check-for-understanding",
+      "source": {
+        "source": "local",
+        "path": "./plugins/k12-check-for-understanding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
     }
   ]
 }
