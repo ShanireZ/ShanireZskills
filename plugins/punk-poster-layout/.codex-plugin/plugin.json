@@ -1,9 +1,9 @@
 {
   "name": "punk-poster-layout",
   "version": "0.1.0",
-  "description": "Choose and implement poster compositions from a 32-layout catalog for image prompts and HTML/CSS.",
+  "description": "Structure standalone posters, flyers, key visuals, and single-canvas editorial sections with a 32-layout catalog only when explicit composition control is requested; not a default for ordinary websites/UI, generic heroes, or platform covers.",
   "author": {
-    "name": "AdrianPunk and contributors",
+    "name": "AdrianPunk; adapted by ShanireZskills contributors",
     "url": "https://github.com/adrianpunk"
   },
   "homepage": "https://github.com/ShanireZ/ShanireZskills",
@@ -19,9 +19,9 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Punk Poster Layout",
-    "shortDescription": "Structure posters with 32 composition systems",
-    "longDescription": "Select, prompt, implement, and review poster layouts with explicit focal flow, hierarchy, grids, image-text relationships, and density controls.",
-    "developerName": "AdrianPunk and contributors",
+    "shortDescription": "Explicit composition control for poster canvases",
+    "longDescription": "Structure standalone posters, flyers, key visuals, and single-canvas editorial sections only when explicit control of focal flow, hierarchy, grids, image-text relationships, or density is requested.",
+    "developerName": "AdrianPunk; adapted by ShanireZskills contributors",
     "category": "Design",
     "capabilities": [
       "Interactive",
@@ -30,8 +30,8 @@
     ],
     "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
     "defaultPrompt": [
-      "Choose a composition and write an image-generation prompt for this poster.",
-      "Turn this poster brief into a precise HTML/CSS layout."
+      "Use the 32-layout catalog to structure this explicitly requested standalone poster, flyer, key visual, or single-canvas editorial section.",
+      "Choose one primary composition and implement its focal flow, hierarchy, grid, image-text relationships, and density."
     ],
     "brandColor": "#F97316",
     "screenshots": []

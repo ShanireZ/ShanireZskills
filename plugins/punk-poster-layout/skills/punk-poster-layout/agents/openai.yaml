@@ -1,4 +1,4 @@
 interface:
   display_name: "Punk Poster Layout"
-  short_description: "Structure posters with 32 composition systems"
-  default_prompt: "Use $punk-poster-layout to choose and implement a strong composition for this poster brief."
+  short_description: "Explicit composition control for poster canvases"
+  default_prompt: "Use $punk-poster-layout to structure this explicitly requested standalone poster, flyer, key visual, or single-canvas editorial section."

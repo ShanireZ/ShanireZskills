@@ -38,7 +38,7 @@ Do not load both detailed catalogs after the composition is known unless the tas
 | Prompt | Return the prompt by default; do not call an image tool. Complete when the prompt specifies the structure and factual copy exactly. | Rendering, generated text, crop safety, and responsive behavior are `not tested`. |
 | Generated poster | Generate only when the user explicitly requests a generated poster. Save only when the user specifies a destination or the tool explicitly provides a current-turn artifact to save. Complete when that artifact is returned and inspected at the requested size. | Unrequested exports, alternate viewports, and model-rendered text that was not verified remain untested. |
 | HTML/CSS | Modify only an explicitly identified target. Without one, return a self-contained example or implementation specification. Complete when the requested code is delivered or implemented and the checks actually run are named. | Any viewport, zoom level, crop, contrast, or interaction not exercised remains untested. |
-| Review | Require an actual artifact and its target viewport or output size. Report only observable evidence and do not auto-fix it. Complete when findings, affected variables, and measured corrections are reported. | Anything outside the supplied artifact and inspected viewport remains untested. |
+| Review | Require an actual artifact and its target viewport or output size. By default, report only observable evidence and do not modify the artifact. If the user explicitly asks to review and fix, report the diagnosis first, then modify only the identified artifact and rerun relevant checks. Review alone is not fix authorization. Complete when findings, affected variables, and measured corrections are reported, plus any explicitly requested fixes are applied and checked. | Anything outside the supplied artifact and inspected viewport remains untested. |
 
 ## Required Inputs
 
@@ -50,7 +50,7 @@ Do not load both detailed catalogs after the composition is known unless the tas
 
 ## Workflow
 
-1. Establish the deliverable: image prompt, generated poster, HTML/CSS poster, single-canvas editorial or poster-like section, composition recommendation, or review.
+1. Establish the deliverable: image prompt, generated poster, HTML/CSS poster, single-canvas editorial or poster-like section, composition recommendation, review, or explicitly requested review-and-fix.
 2. Derive the structural inputs from the brief:
    - aspect ratio and target size;
    - title, supporting information, date/location/CTA, and their priority;
@@ -64,6 +64,7 @@ Do not load both detailed catalogs after the composition is known unless the tas
    - For an image prompt, integrate the structure into one complete prompt rather than appending a list of composition keywords.
    - For HTML/CSS, encode the same structure with Grid/Flexbox, explicit spans, shared alignment lines, responsive tokens, `object-fit`, and `object-position`.
    - For a review, identify the broken structural variable from observable evidence and propose a measurable correction without changing the artifact.
+   - For an explicitly requested review-and-fix, report that diagnosis first, then modify only the identified artifact and rerun the checks relevant to the change. A request to review by itself never grants modification authority.
 6. Run the relevant review checklist before finishing.
 
 Ask when required factual copy is unavailable, when a missing ratio materially changes the composition, or when another missing choice cannot be inferred without changing the brief. Otherwise choose only a defensible non-factual structural default and state it briefly.

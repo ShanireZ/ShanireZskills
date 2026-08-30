@@ -32,7 +32,7 @@
 | [`ask-sonner`](plugins/ask-sonner/skills/ask-sonner/SKILL.md) | 安装、配置、样式化和排查 Sonner toast | Emil Kowalski，MIT |
 | [`punk-cover`](plugins/punk-cover/skills/punk-cover/SKILL.md) | 将文章、帖子和主题生成平台适配的封面图或复用提示词 | AdrianPunk 与贡献者，GPL-3.0 |
 | [`punk-avatar`](plugins/punk-avatar/skills/punk-avatar/SKILL.md) | 将人物、宠物、物品照片或描述生成头像与纪念卡 | AdrianPunk 与贡献者，GPL-3.0 |
-| [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 从 32 种构图中选择海报骨架，并落地图像提示词或 HTML/CSS | AdrianPunk 与贡献者，GPL-3.0 |
+| [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 仅在明确要求结构构图控制时，为独立海报、传单、主视觉或单画布编辑版块选择 32 种构图；普通网站/UI、通用 Hero 与未明确要求构图控制的平台封面不默认触发 | 原文 AdrianPunk；Agent Skill 由 ShanireZskills 贡献者改编与包装；GPL-3.0 |
 
 ## 安装
 
