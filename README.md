@@ -32,8 +32,8 @@
 | [`pick-ui-library`](plugins/pick-ui-library/skills/pick-ui-library/SKILL.md) | 从精选清单中为前端任务选择合适的库 | Emil Kowalski，MIT |
 | [`prototype`](plugins/prototype/skills/prototype/SKILL.md) | 创建多个差异化 UI 方案并通过可视选择器比较 | Emil Kowalski，MIT |
 | [`ask-sonner`](plugins/ask-sonner/skills/ask-sonner/SKILL.md) | 安装、配置、样式化和排查 Sonner toast | Emil Kowalski，MIT |
-| [`punk-cover`](plugins/punk-cover/skills/punk-cover/SKILL.md) | 将文章、帖子和主题生成平台适配的封面图或复用提示词 | AdrianPunk 与贡献者，GPL-3.0 |
-| [`punk-avatar`](plugins/punk-avatar/skills/punk-avatar/SKILL.md) | 将人物、宠物、物品照片或描述生成头像与纪念卡 | AdrianPunk 与贡献者，GPL-3.0 |
+| [`punk-cover`](plugins/punk-cover/skills/punk-cover/SKILL.md) | 将文章、帖子和主题生成平台适配的封面图或复用提示词 | AdrianPunk 与贡献者；上游未声明许可证 |
+| [`punk-avatar`](plugins/punk-avatar/skills/punk-avatar/SKILL.md) | 将人物、宠物、物品照片或描述生成头像与纪念卡 | AdrianPunk 与贡献者；上游未声明许可证 |
 | [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 仅在明确要求结构构图控制时，为独立海报、传单、主视觉或单画布编辑版块选择 32 种构图；普通网站/UI、通用 Hero 与未明确要求构图控制的平台封面不默认触发 | 原文 AdrianPunk；Agent Skill 由 Aptinery 贡献者改编与包装；GPL-3.0 |
 
 ## 安装
@@ -91,6 +91,6 @@ copilot plugin install animate@aptinery
 
 - Anthropic / Learning Commons 的四个 K-12 skill 使用 Apache-2.0，固定来源 commit 记录在 [`NOTICE`](NOTICE)。
 - Emil Kowalski 的 12 个设计与工程 skill 使用 MIT，固定来源 commit 记录在 [`NOTICE`](NOTICE)。
-- AdrianPunk 与贡献者的三个 Punk skill 使用 GPL-3.0；两个视觉生成 skill 的固定来源 commit，以及构图 skill 的文章来源和许可记录在 [`NOTICE`](NOTICE)。
+- `punk-cover` 与 `punk-avatar` 的固定来源 commit 记录在 [`NOTICE`](NOTICE)，但该上游版本未声明许可证，Aptinery 不为其推定或补充许可；`punk-poster-layout` 是另行归属的 Aptinery 改编包，使用 GPL-3.0。
 
-每个主插件根目录及其 skill 目录都包含适用的许可证副本。Claude 专用镜像仅用于保留 3 个 skill 的 `disable-model-invocation: true` 语义，不增加新的市场条目或许可条件。
+已有明确许可的主插件根目录及其 skill 目录包含适用的许可证副本；`punk-cover` 与 `punk-avatar` 因上游未声明许可证，不附加或推定任何许可。Claude 专用镜像仅用于保留 3 个 skill 的 `disable-model-invocation: true` 语义，不增加新的市场条目或许可条件。

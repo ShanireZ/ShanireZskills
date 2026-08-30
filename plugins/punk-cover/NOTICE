@@ -32,5 +32,6 @@ Style or platform delegation never approves model-derived visible copy. These
 changes do not claim that prompt-only or one-stage image generation can
 guarantee exact text.
 
-The imported skill and style atoms remain distributed under GNU GPL v3.0. See
-the accompanying LICENSE file.
+The pinned upstream commit contains no license declaration. This notice records
+provenance and local modifications only; it does not grant or infer a license
+for the imported skill or style atoms.

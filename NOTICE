@@ -40,11 +40,12 @@ upstream commit 50ea29b65b98788f9ed1df62818dbe530855bfb3
 The upstream README credits AdrianPunk for prompt design and style direction
 and jinchenma94 for repository maintenance.
 
-The imported `punk-cover` and `punk-avatar` skills and their required style
-atoms are distributed under GNU GPL v3.0. This licensing status was confirmed
-to the repository maintainer on 2026-08-29. The pinned upstream commit does
-not contain a license file, so this distribution supplies the canonical GPLv3
-text at each plugin root and skill root.
+The pinned upstream commit contains no license declaration for the imported
+`punk-cover` and `punk-avatar` skills or their required style atoms. Aptinery
+does not assign, infer, or supplement a license for that material. The locally
+added GPLv3 texts and claims were removed on 2026-08-30 as unsupported. This
+notice records provenance and local modifications only; it does not establish
+redistribution permission.
 
 On 2026-08-30, this repository intentionally modified the vendored `punk-cover`
 `SKILL.md` and `references/cover-prompt-blueprint.md`. The local adaptation

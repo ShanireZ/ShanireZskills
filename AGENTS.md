@@ -15,8 +15,8 @@ plugins/
 ├── k12-lesson-differentiation/ # vendored, Apache-2.0
 ├── k12-lesson-prep/            # vendored, Apache-2.0
 ├── k12-check-for-understanding/ # vendored, Apache-2.0; math only
-├── punk-cover/                 # vendored, GPL-3.0; 25 cover style atoms
-├── punk-avatar/                # vendored, GPL-3.0; 6 avatar style atoms
+├── punk-cover/                 # vendored; upstream declares no license; 25 cover style atoms
+├── punk-avatar/                # vendored; upstream declares no license; 6 avatar style atoms
 ├── punk-poster-layout/         # article-derived, GPL-3.0; 32 composition systems
 └── <12 Emil Kowalski skills>/  # vendored, MIT
     └── skills/<same-name>/
@@ -34,7 +34,7 @@ Distribution adapters live at:
 - `plugins/*/.claude-plugin/plugin.json`, `.claude-plugins/*/.claude-plugin/plugin.json`, and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
 - `plugins/*/skills/` — skills CLI and direct Agent Skills discovery.
 
-Keep `0.2.0`-style versions synchronized across all plugin and marketplace manifests and `CHANGELOG.md`.
+Keep `0.2.0`-style versions synchronized across all plugin and marketplace manifests.
 
 ## First-party style source of truth
 
@@ -62,7 +62,7 @@ The four skill trees under `plugins/k12-{lesson-plan-creation,lesson-differentia
 
 - Preserve each directory's Apache-2.0 `LICENSE`, SPDX header, and reference `NOTICE` files.
 - Preserve the root `NOTICE` attribution when redistributing any K-12 skill.
-- Do not silently edit vendored files. If a local change is necessary, add the prominent modification notice required by Apache-2.0 and record it in `CHANGELOG.md`.
+- Do not silently edit vendored files. If a local change is necessary, add the prominent modification notice required by Apache-2.0 and record it in `NOTICE`.
 - The optional upstream `.mcp.json` is intentionally not vendored; skills that can use the Learning Commons connector document their no-connector fallback.
 - `.gitattributes` disables whitespace diagnostics only for these four directories so `git diff --check` can pass without changing upstream blobs.
 
@@ -70,17 +70,17 @@ The four skill trees under `plugins/k12-{lesson-plan-creation,lesson-differentia
 
 The 12 skill directories imported from `emilkowalski/skills` are pinned to commit `d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7` and remain MIT-licensed. Preserve the root `NOTICE` attribution and the MIT `LICENSE` copies at both plugin and skill roots.
 
-- Nine primary skill trees are copied verbatim. Do not silently edit their upstream files; record any intentional adaptation in `NOTICE` and `CHANGELOG.md`.
+- Nine primary skill trees are copied verbatim. Do not silently edit their upstream files; record any intentional adaptation in `NOTICE`.
 - `pick-ui-library`, `prototype`, and `review-animations` use `agents/openai.yaml` with `policy.allow_implicit_invocation: false` in their primary plugin trees because that is Codex's invocation-policy contract. Their Markdown bodies remain upstream-identical; only the invocation frontmatter is translated, and `review-animations` adds an explicit-only sentence to its description.
 - `.claude-plugins/{pick-ui-library,prototype,review-animations}/` are exact upstream source mirrors used only by `.claude-plugin/marketplace.json`. They retain Claude's `disable-model-invocation: true`; keep them byte-identical to the pinned upstream skill trees.
 - The Claude mirror directories are packaging adapters, not extra marketplace products. The public marketplace contains 20 names, not 23.
 
-## Vendored Punk skills
+## Vendored Punk skills without a declared upstream license
 
-`plugins/punk-cover/skills/punk-cover/`, `plugins/punk-avatar/skills/punk-avatar/`, and their required `styles/` subsets are copied from `adrianpunk/Punk-Skill` commit `50ea29b65b98788f9ed1df62818dbe530855bfb3` and distributed under GPL-3.0.
+`plugins/punk-cover/skills/punk-cover/`, `plugins/punk-avatar/skills/punk-avatar/`, and their required `styles/` subsets are copied from `adrianpunk/Punk-Skill` commit `50ea29b65b98788f9ed1df62818dbe530855bfb3`. That pinned upstream commit contains no license declaration, so Aptinery does not assign, infer, or supplement one; redistribution permission is not established.
 
-- Preserve the upstream `SKILL.md`, `agents/openai.yaml`, references, and selected style atoms verbatim. Record any intentional adaptation in `NOTICE` and `CHANGELOG.md`.
-- The pinned upstream commit has no license file. GPL-3.0 was confirmed to the maintainer on 2026-08-29; canonical GPLv3 copies at each plugin and skill root are packaging additions, not upstream blobs.
+- Preserve the upstream `SKILL.md`, `agents/openai.yaml`, references, and selected style atoms verbatim. Record any intentional adaptation in `NOTICE`.
+- Do not restore the removed GPLv3 copies or claims from Git history, archives, caches, or prior records. A future license declaration requires explicit, independently verifiable evidence from the rights holder.
 - `punk-cover` carries only its 25 cover-capable style atoms; `punk-avatar` carries only its six avatar-capable style atoms. Their `../../styles/{style-id}` runtime paths depend on those plugin-root `styles/` directories.
 - Upstream screenshots and repository-level validation scripts are not runtime dependencies and are intentionally not vendored.
 
@@ -111,6 +111,10 @@ claude plugin validate . --strict
 ```
 
 Also parse every JSON manifest, check vendored files against the recorded upstream commit when they were not intentionally modified, and finish with `git diff --check`.
+
+## Research records
+
+Do not create or restore `docs/research/` or standalone research/audit report files. Return ad hoc research in the conversation. When a verified licensing or provenance fact changes the distribution, record only the operative fact in the relevant source-of-truth file (`AGENTS.md`, `README.md`, or `NOTICE`); do not reconstruct removed reports from Git history, archives, caches, or prior records.
 
 ## Agent skills
 
