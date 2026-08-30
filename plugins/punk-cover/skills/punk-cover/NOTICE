@@ -1,0 +1,36 @@
+punk-cover
+
+This package includes material copied from:
+https://github.com/adrianpunk/Punk-Skill
+upstream commit 50ea29b65b98788f9ed1df62818dbe530855bfb3
+
+The upstream README credits AdrianPunk for prompt design and style direction
+and jinchenma94 for repository maintenance.
+
+Local modification notice
+
+On 2026-08-30, ShanireZskills intentionally modified the vendored `SKILL.md`
+and `references/cover-prompt-blueprint.md`. The local adaptation distinguishes
+source facts, user-authored visible copy, and unapproved suggested copy;
+requires user approval before derived titles or subtitles become visible;
+defaults exact-copy work to a text-free base image plus deterministic
+typography when compatible tools are available; validates the actual rendered
+pixels for exact, readable, uncropped text; reports generated text as passed,
+failed, or not tested separately from image generation; bounds retries; narrows
+discovery to cover images and reusable cover prompts. Standalone posters,
+flyers, key visuals, and generic poster prompts route directly to
+`punk-poster-layout` when they explicitly need structural composition control.
+Article, social, and platform covers remain with `punk-cover` even with
+poster-like treatment; when they explicitly request focal flow, grids,
+image-text relationships, or density, `punk-poster-layout` serves only as a
+subordinate structural step. The skill auto-selects exactly one eligible catalog
+style only when the user explicitly delegates style selection or all settings.
+
+These changes address the risk that an image model may misspell, omit, invent,
+or crop visible text even when the intended wording is correct in the prompt.
+Style or platform delegation never approves model-derived visible copy. These
+changes do not claim that prompt-only or one-stage image generation can
+guarantee exact text.
+
+The imported skill and style atoms remain distributed under GNU GPL v3.0. See
+the accompanying LICENSE file.

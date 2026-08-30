@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Adapt the vendored `punk-cover` workflow to preserve user-authored visible copy, require explicit approval for derived titles and subtitles, prefer deterministic text compositing when exact wording is required, inspect actual output pixels for exact uncropped text, report `passed` / `failed` / `not tested` separately from image generation, stop retries at a defined bound, exclude standalone poster/flyer/key-visual routing while allowing poster-like cover treatment and subordinate structural composition, and auto-select exactly one eligible style only after explicit style delegation without treating that delegation as approval for derived visible copy.
+- Refine `punk-poster-layout` ratio gates by deliverable, make review classification evidence-led, prevent source-example style leakage, and preserve a single accessible title in layered type-over-image implementations.
 - **Breaking:** replace the published `k12-lesson-planning` plugin and skill name with upstream's `k12-lesson-plan-creation`; no compatibility alias is retained.
 - Refresh all existing K-12 skill files and attribution from `anthropics/k12-teacher-skills` commit `281eb8d41fe2837d911541c9bbb870b58add804c`.
 - Expand the marketplace from 18 to 20 independently installable skills by adding `k12-lesson-prep` and the math-only `k12-check-for-understanding` under Apache-2.0.

@@ -6,6 +6,8 @@ This blueprint defines the complete cover-prompt shape used by `punk-cover`.
 
 Do not paste this blueprint verbatim with empty placeholders. Fill it with derived article fields and selected style anchors.
 
+An image prompt cannot guarantee exact rendered text. When exact copy is required, this blueprint describes a no-text base artwork plus a deterministic typography layer. The workflow must validate the actual final pixels separately.
+
 ## Required Final Prompt Structure
 
 ```text
@@ -18,13 +20,26 @@ Create one single {platform} cover image with aspect ratio {ratio}.
 The cover must use the selected visual style: {style name} / {style id}.
 This style is not a decorative filter. Every major cover decision must be implemented through this style's visual language.
 
+Production mode: {prompt_only / deterministic_text_overlay / one_stage_generated_text}
+
+## Copy Provenance and Approval
+
+- Source-fact summary for visual reasoning only: {source_fact_summary}
+- Approved exact main visual title: {approved_main_visual_title_or_none}
+- Approved exact complete title, if separately displayed: {approved_complete_title_or_none}
+- Approved exact subtitle: {approved_subtitle_or_none}
+- Other approved visible copy: {approved_other_visible_copy_or_none}
+
+Only the approved fields above may become visible text. Preserve their characters, punctuation, letter case, and wording exactly. Source facts and model suggestions are not visible copy. Do not invent, translate, normalize, shorten, expand, or silently substitute text.
+Do not duplicate one approved title into both A-layer and B-layer unless the user approved both visible instances.
+
 ## Input
 
 - Title/topic: {title_or_topic}
 - Title hierarchy:
-  - A-layer / main visual title: {short_high_impact_title}
-  - B-layer / complete title: {complete_title}
-  - C-layer / subtitle or small text: {subtitle}
+  - A-layer / main visual title: {approved_main_visual_title_or_none}
+  - B-layer / complete title: {approved_complete_title_or_none}
+  - C-layer / subtitle or small text: {approved_subtitle_or_none}
 - Platform: {platform}
 - Aspect ratio: {ratio}
 - Language: {language}
@@ -52,11 +67,23 @@ The cover must communicate:
 
 Generate a deliberate editorial cover, not a generic illustration, PPT cover, course cover, advertisement, or information card.
 
-The main title must be complete, accurate, and clearly readable. If the source title is long, use the title hierarchy above:
+The main title must be complete, accurate, and clearly readable. If the approved copy uses a long-title hierarchy, use the hierarchy above:
 
-- A-layer: a short high-impact visual title.
-- B-layer: the complete title or complete meaning.
-- C-layer: subtitle, context line, label, or small editorial text.
+- A-layer: the exact approved main visual title.
+- B-layer: the exact approved complete title, when separately present.
+- C-layer: the exact approved subtitle, when present.
+
+Do not create an A-layer, B-layer, or C-layer from source material on your own. An automatically derived short title, subtitle, translation, context line, or label must be approved before this prompt is compiled.
+
+## Text Rendering Path
+
+Follow only the selected production mode:
+
+- `deterministic_text_overlay`: generate the base artwork with no letters, glyphs, pseudo-text, logos, labels, or watermarks. Reserve crop-safe, visually integrated regions for the approved copy. After generation, a deterministic typography compositor places the approved strings using the selected style's type behavior, geometry, materials, and hierarchy.
+- `one_stage_generated_text`: render only the approved exact strings and no other text. Keep all text inside safe margins and free from occlusion. This mode carries acknowledged spelling and cropping risk and still requires inspection of the actual output.
+- `prompt_only`: prepare this production prompt but make no claim about generated text. Delivery status is `generated text: not tested`.
+
+For text-as-object styles, the base artwork must reserve the structural space, surfaces, depth cues, masks, or paths needed for the deterministic type layer. Do not replace style-native typography with a generic caption.
 
 ## Style Application
 
@@ -102,13 +129,15 @@ The title must not be a caption pasted on top of an unrelated image. The selecte
 - How labels, dates, tags, or small text behave.
 - How images, objects, textures, or geometry interact with letterforms.
 
+Any label, date, tag, note, or supporting line must be present in the approved-visible-copy manifest. If it is not approved, omit it even when the selected style atom normally permits or suggests it.
+
 ## Typography
 
 Use typography appropriate to {style name}.
 
 Rules:
 
-- Preserve correct Chinese characters.
+- Render only approved visible copy and preserve every character exactly.
 - Keep the main title readable.
 - Do not crop, misspell, or over-distort key text.
 - Use only a small amount of supporting text.
@@ -158,3 +187,7 @@ The final image must satisfy all of these:
 - Use `STYLE.md` to recover style language that is not yet structured in metadata.
 - The final prompt may add style-specific sections when needed, but must not add another style.
 - The final prompt should be longer and more complete than the raw style atom, because it includes cover shape, title hierarchy, and content adaptation.
+- Copy approved visible strings exactly. Style placeholders or instructions that propose automatic subtitles, short titles, translations, labels, dates, or editorial notes are subordinate to the approval manifest.
+- Keep suggested but unapproved copy out of the compiled prompt.
+- In deterministic mode, make the base-art instruction explicitly text-free and keep the overlay specification deterministic and style-native.
+- A correct prompt or text-layer source is not evidence that final rendered text passed. The actual current-run artifact must be inspected under the parent workflow.

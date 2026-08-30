@@ -46,6 +46,23 @@ to the ShanireZskills maintainer on 2026-08-29. The pinned upstream commit does
 not contain a license file, so this distribution supplies the canonical GPLv3
 text at each plugin root and skill root.
 
+On 2026-08-30, ShanireZskills intentionally modified the vendored `punk-cover`
+`SKILL.md` and `references/cover-prompt-blueprint.md`. The local adaptation
+distinguishes source facts, user-authored copy, and unapproved suggestions;
+requires actual-artifact text inspection; and adds deterministic typography,
+explicit validation statuses, bounded retries, narrow cover-only discovery,
+and explicit style-selection delegation. Standalone posters, flyers, key
+visuals, and generic poster prompts route directly to `punk-poster-layout` when
+they explicitly need structural composition control. Article, social, and
+platform covers remain with `punk-cover` even with poster-like treatment; when
+they explicitly request focal flow, grids, image-text relationships, or density,
+`punk-poster-layout` serves only as a subordinate structural step.
+Style delegation selects exactly one eligible catalog style but never approves
+model-derived visible copy. The change also prevents an image model's
+generated, misspelled, missing, or cropped text from being reported as verified
+merely because the prompt contained the intended copy. Matching modification
+notices are included at the `punk-cover` plugin root and skill root.
+
 The `punk-poster-layout` skill adapts two articles authored by Punk Space /
 AdrianPunk, who remains the primary source attribution:
 

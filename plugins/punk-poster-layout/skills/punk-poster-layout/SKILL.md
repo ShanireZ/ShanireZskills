@@ -43,7 +43,9 @@ Do not load both detailed catalogs after the composition is known unless the tas
 ## Required Inputs
 
 - Never invent factual copy or identity: title, date, location, ticketing details, names, prices, URLs, logos, and brand marks must come from the user or an authoritative upstream brief.
-- If the aspect ratio is missing and different ratios would materially change the composition, ask. Use a stated default only when the user explicitly says `auto`.
+- For a generated poster or a target-specific HTML/CSS implementation, ask before execution when the aspect ratio is missing and different ratios would materially change the composition.
+- For a recommendation or prompt-only deliverable, a missing ratio is not a hard stop: keep an explicit `{aspect ratio}` parameter, or use an example clearly labeled as an adjustable starting point rather than presenting it as the user's choice.
+- Resolve a missing ratio to a final default on the user's behalf only when the user explicitly says `auto`.
 - Do not turn every missing field into a hard stop. Infer only non-factual structural defaults that do not change the brief, and state them.
 - For HTML/CSS without a named project target, return a self-contained example or specification instead of editing the workspace.
 - For review, stop and request the artifact plus the intended viewport or output size when either is missing.
@@ -58,7 +60,9 @@ Do not load both detailed catalogs after the composition is known unless the tas
    - intended first focal point and final reading destination;
    - content density, emotional tone, and required negative space;
    - required comparisons, sequences, or repeated items.
-3. Use the selector to choose exactly one primary composition. Add at most one subordinate relationship when it solves a separate need, such as `Rule of Thirds + S-Curve` or `Modular Grid + one broken-grid title`.
+3. Choose the composition lens appropriate to the deliverable:
+   - For a recommendation, prompt, generated poster, or HTML/CSS implementation, use the selector to choose exactly one primary composition. Add at most one subordinate relationship when it solves a separate need, such as `Rule of Thirds + S-Curve` or `Modular Grid + one broken-grid title`.
+   - For review or review-and-fix, name a composition only when the artifact reliably matches it. If it cannot be classified reliably, say so explicitly and review the observable focal point, hierarchy, balance, path, spacing, and crop instead; do not infer the designer's intent.
 4. State the structural brief with concrete positions, proportions, spans, paths, and constraints. Prefer `four columns, 20px gutters, title spans three columns` over `clean grid`; prefer `65%–80% active negative space` over `minimal`.
 5. Produce the requested deliverable:
    - For an image prompt, integrate the structure into one complete prompt rather than appending a list of composition keywords.
@@ -67,7 +71,7 @@ Do not load both detailed catalogs after the composition is known unless the tas
    - For an explicitly requested review-and-fix, report that diagnosis first, then modify only the identified artifact and rerun the checks relevant to the change. A request to review by itself never grants modification authority.
 6. Run the relevant review checklist before finishing.
 
-Ask when required factual copy is unavailable, when a missing ratio materially changes the composition, or when another missing choice cannot be inferred without changing the brief. Otherwise choose only a defensible non-factual structural default and state it briefly.
+Ask when required factual copy is unavailable, when a generated poster or target-specific HTML/CSS implementation is missing a ratio that would materially change the composition, or when another missing choice cannot be inferred without changing the brief. For a recommendation or prompt-only deliverable, preserve a missing ratio as a parameter or label any example ratio as an adjustable starting point. Resolve it to a final default only when the user explicitly says `auto`; otherwise choose only a defensible non-factual structural default and state it briefly.
 
 ## Composition Rules
 
