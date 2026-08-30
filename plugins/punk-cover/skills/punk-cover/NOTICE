@@ -9,7 +9,7 @@ and jinchenma94 for repository maintenance.
 
 Local modification notice
 
-On 2026-08-30, ShanireZskills intentionally modified the vendored `SKILL.md`
+On 2026-08-30, this distribution intentionally modified the vendored `SKILL.md`
 and `references/cover-prompt-blueprint.md`. The local adaptation distinguishes
 source facts, user-authored visible copy, and unapproved suggested copy;
 requires user approval before derived titles or subtitles become visible;

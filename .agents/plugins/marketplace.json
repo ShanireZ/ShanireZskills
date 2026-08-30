@@ -1,7 +1,7 @@
 {
-  "name": "shanirezskills",
+  "name": "aptinery",
   "interface": {
-    "displayName": "ShanireZskills"
+    "displayName": "Aptinery"
   },
   "plugins": [
     {

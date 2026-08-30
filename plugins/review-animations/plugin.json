@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "review-animations",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Review animation code against a strict craft, performance, interaction, and accessibility bar.",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "MIT",
   "keywords": [
     "agent-skills",

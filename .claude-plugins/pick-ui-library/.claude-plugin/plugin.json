@@ -1,13 +1,13 @@
 {
   "name": "pick-ui-library",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Choose a trusted frontend library for common UI, motion, charting, state, and styling tasks.",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "MIT",
   "keywords": [
     "agent-skills",

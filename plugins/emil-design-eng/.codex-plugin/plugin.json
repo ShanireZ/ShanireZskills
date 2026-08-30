@@ -1,13 +1,13 @@
 {
   "name": "emil-design-eng",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Apply Emil Kowalski's UI polish, component-design, and animation principles.",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "MIT",
   "keywords": [
     "agent-skills",
@@ -27,7 +27,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "websiteURL": "https://github.com/ShanireZ/Aptinery",
     "defaultPrompt": [
       "Polish this interface using Emil's design principles.",
       "Improve the motion and interaction details in this UI."

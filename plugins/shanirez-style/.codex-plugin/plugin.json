@@ -1,13 +1,13 @@
 {
   "name": "shanirez-style",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ShanireZ's personal C++14 style for competitive-programming and online-judge solutions.",
   "author": {
     "name": "ShanireZ",
     "url": "https://github.com/ShanireZ"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "GPL-3.0",
   "keywords": [
     "agent-skills",
@@ -27,7 +27,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "websiteURL": "https://github.com/ShanireZ/Aptinery",
     "defaultPrompt": [
       "Solve this online-judge problem in ShanireZ's C++ style.",
       "Refactor this contest solution to match ShanireZ's style."

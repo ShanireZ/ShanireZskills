@@ -1,13 +1,13 @@
 {
   "name": "punk-poster-layout",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Structure standalone posters, flyers, key visuals, and single-canvas editorial sections with a 32-layout catalog only when explicit composition control is requested; not a default for ordinary websites/UI, generic heroes, or platform covers.",
   "author": {
-    "name": "AdrianPunk; adapted by ShanireZskills contributors",
+    "name": "AdrianPunk; adapted by Aptinery contributors",
     "url": "https://github.com/adrianpunk"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "GPL-3.0",
   "keywords": [
     "agent-skills",

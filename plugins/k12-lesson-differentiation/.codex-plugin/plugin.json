@@ -1,13 +1,13 @@
 {
   "name": "k12-lesson-differentiation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adapt an existing K-12 lesson for students at different proficiency levels and needs.",
   "author": {
     "name": "Anthropic / Learning Commons",
     "url": "https://github.com/anthropics/k12-teacher-skills"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "Apache-2.0",
   "keywords": [
     "agent-skills",
@@ -27,7 +27,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "websiteURL": "https://github.com/ShanireZ/Aptinery",
     "defaultPrompt": [
       "Differentiate this lesson for three proficiency levels.",
       "Adapt these materials for varied student needs."

@@ -1,13 +1,13 @@
 {
   "name": "find-animation-opportunities",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find UI areas that genuinely benefit from motion and propose exact values without implementing.",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "MIT",
   "keywords": [
     "agent-skills",

@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "k12-lesson-prep",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Prepare to teach an existing K-12 lesson by working through its key task and producing a concise teacher prep note.",
   "author": {
     "name": "Anthropic / Learning Commons",
     "url": "https://github.com/anthropics/k12-teacher-skills"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "Apache-2.0",
   "keywords": [
     "agent-skills",

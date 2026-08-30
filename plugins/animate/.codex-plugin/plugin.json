@@ -1,13 +1,13 @@
 {
   "name": "animate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Build polished web animations with deliberate motion, easing, duration, interruption, and exit behavior.",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "MIT",
   "keywords": [
     "agent-skills",
@@ -28,7 +28,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/ShanireZ/ShanireZskills",
+    "websiteURL": "https://github.com/ShanireZ/Aptinery",
     "defaultPrompt": [
       "Animate this UI with the right easing and duration.",
       "Add purposeful motion to this component."

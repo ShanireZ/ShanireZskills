@@ -1,12 +1,12 @@
 # AGENTS.md
 
-> Collective workspace rules live in [`../AGENTS.md`](../AGENTS.md). This file is the project-specific guideline for **ShanireZskills**, read by all agent runtimes (Claude Code, Codex, Gemini, Cursor, etc.).
+> Collective workspace rules live in [`../AGENTS.md`](../AGENTS.md). This file is the project-specific guideline for **Aptinery**, read by all agent runtimes (Claude Code, Codex, Gemini, Cursor, etc.).
 
 ## What this repo is
 
-A public Agent Skills marketplace containing 20 independently installable plugins. GitHub is the primary repository; [CNB](https://cnb.cool/Round1/ShanireZskills) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+Aptinery — A curated foundry for Agent Skills. It is a public marketplace containing 20 independently installable plugins, combining first-party skills with curated, cross-client adaptations of non-standard upstream skills. [GitHub](https://github.com/ShanireZ/Aptinery) is the primary repository; [CNB](https://cnb.cool/Round1/Aptinery) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
 
-The market machine identifier is `shanirezskills`; the user-facing name is `ShanireZskills`. Each plugin contains exactly one same-named Agent Skill:
+The marketplace machine identifier is `aptinery`; the user-facing name is `Aptinery`. Each plugin contains exactly one same-named Agent Skill:
 
 ```text
 plugins/
@@ -34,7 +34,7 @@ Distribution adapters live at:
 - `plugins/*/.claude-plugin/plugin.json`, `.claude-plugins/*/.claude-plugin/plugin.json`, and `.claude-plugin/marketplace.json` — Claude Code and compatible marketplace clients.
 - `plugins/*/skills/` — skills CLI and direct Agent Skills discovery.
 
-Keep `0.1.0`-style versions synchronized across all plugin and marketplace manifests and `CHANGELOG.md`.
+Keep `0.2.0`-style versions synchronized across all plugin and marketplace manifests and `CHANGELOG.md`.
 
 ## First-party style source of truth
 
@@ -86,7 +86,7 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 
 ## Punk poster-layout skill
 
-`plugins/punk-poster-layout/skills/punk-poster-layout/` is an Agent Skill adaptation of two Punk Space articles by AdrianPunk, not a verbatim tree from the pinned `Punk-Skill` commit. The source URLs and attribution are recorded in `NOTICE`, and ShanireZskills distributes the adaptation under GPL-3.0.
+`plugins/punk-poster-layout/skills/punk-poster-layout/` is an Agent Skill adaptation of two Punk Space articles by AdrianPunk, not a verbatim tree from the pinned `Punk-Skill` commit. The source URLs and attribution are recorded in `NOTICE`, and Aptinery distributes the adaptation under GPL-3.0.
 
 - Preserve all 32 named composition systems, their image-prompt and HTML/CSS expressions, and the review criteria when reorganizing the references.
 - Keep the skill's role structural: it selects and encodes focal flow, hierarchy, grids, image-text relationships, and density. It does not own the visual style atoms used by `punk-cover`.

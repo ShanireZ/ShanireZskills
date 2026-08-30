@@ -1,13 +1,13 @@
 {
   "name": "k12-check-for-understanding",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create 1-3 item math checks for understanding with misconception-based distractors and next-step teacher guidance.",
   "author": {
     "name": "Anthropic / Learning Commons",
     "url": "https://github.com/anthropics/k12-teacher-skills"
   },
-  "homepage": "https://github.com/ShanireZ/ShanireZskills",
-  "repository": "https://github.com/ShanireZ/ShanireZskills",
+  "homepage": "https://github.com/ShanireZ/Aptinery",
+  "repository": "https://github.com/ShanireZ/Aptinery",
   "license": "Apache-2.0",
   "keywords": [
     "agent-skills",

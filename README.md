@@ -1,4 +1,4 @@
-# ShanireZskills
+# Aptinery
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
 ![Type: Agent Skills marketplace](https://img.shields.io/badge/type-Agent%20Skills%20marketplace-success.svg?style=flat-square)
@@ -7,7 +7,9 @@
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757.svg?style=flat-square&logo=claude&logoColor=white)
 ![OpenAI Codex](https://img.shields.io/badge/Codex-compatible-412991.svg?style=flat-square&logo=openai&logoColor=white)
 
-`ShanireZskills` 是一个公开的 Agent Skills 市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 20 个可独立安装的 skill；市场不把它们捆绑成一个聚合插件。
+**Aptinery — A curated foundry for Agent Skills.**
+
+精选、改造并跨客户端发行 Agent Skills 的个人技能工坊与市场。仓库同时提供通用 Agent Skills、Agent Plugins、Codex/ChatGPT 插件和 Claude Code marketplace 入口，当前收录 20 个可独立安装的 skill；市场不把它们捆绑成一个聚合插件。
 
 ## Skills
 
@@ -32,7 +34,7 @@
 | [`ask-sonner`](plugins/ask-sonner/skills/ask-sonner/SKILL.md) | 安装、配置、样式化和排查 Sonner toast | Emil Kowalski，MIT |
 | [`punk-cover`](plugins/punk-cover/skills/punk-cover/SKILL.md) | 将文章、帖子和主题生成平台适配的封面图或复用提示词 | AdrianPunk 与贡献者，GPL-3.0 |
 | [`punk-avatar`](plugins/punk-avatar/skills/punk-avatar/SKILL.md) | 将人物、宠物、物品照片或描述生成头像与纪念卡 | AdrianPunk 与贡献者，GPL-3.0 |
-| [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 仅在明确要求结构构图控制时，为独立海报、传单、主视觉或单画布编辑版块选择 32 种构图；普通网站/UI、通用 Hero 与未明确要求构图控制的平台封面不默认触发 | 原文 AdrianPunk；Agent Skill 由 ShanireZskills 贡献者改编与包装；GPL-3.0 |
+| [`punk-poster-layout`](plugins/punk-poster-layout/skills/punk-poster-layout/SKILL.md) | 仅在明确要求结构构图控制时，为独立海报、传单、主视觉或单画布编辑版块选择 32 种构图；普通网站/UI、通用 Hero 与未明确要求构图控制的平台封面不默认触发 | 原文 AdrianPunk；Agent Skill 由 Aptinery 贡献者改编与包装；GPL-3.0 |
 
 ## 安装
 
@@ -43,20 +45,20 @@
 全局安装全部 skill：
 
 ```bash
-npx skills add ShanireZ/ShanireZskills -g
+npx skills add ShanireZ/Aptinery -g
 ```
 
 单独安装表格中的任一 skill：
 
 ```bash
-npx skills add ShanireZ/ShanireZskills -g --skill animate
+npx skills add ShanireZ/Aptinery -g --skill animate
 ```
 
 ### Claude Code marketplace
 
 ```bash
-claude plugin marketplace add ShanireZ/ShanireZskills
-claude plugin install animate@shanirezskills
+claude plugin marketplace add ShanireZ/Aptinery
+claude plugin install animate@aptinery
 ```
 
 `pick-ui-library`、`prototype` 和 `review-animations` 保留上游的 Claude 显式调用契约；安装后分别通过 `/pick-ui-library:pick-ui-library`、`/prototype:prototype` 和 `/review-animations:review-animations` 调用。
@@ -64,8 +66,8 @@ claude plugin install animate@shanirezskills
 ### Codex / ChatGPT marketplace
 
 ```bash
-codex plugin marketplace add ShanireZ/ShanireZskills
-codex plugin add animate@shanirezskills
+codex plugin marketplace add ShanireZ/Aptinery
+codex plugin add animate@aptinery
 ```
 
 上述 3 个显式调用 skill 在 Codex 中通过各自的 `agents/openai.yaml` 禁止隐式调用，可用 `$pick-ui-library`、`$prototype` 和 `$review-animations` 显式调用。
@@ -73,8 +75,8 @@ codex plugin add animate@shanirezskills
 ### GitHub Copilot CLI marketplace
 
 ```bash
-copilot plugin marketplace add ShanireZ/ShanireZskills
-copilot plugin install animate@shanirezskills
+copilot plugin marketplace add ShanireZ/Aptinery
+copilot plugin install animate@aptinery
 ```
 
 ### Agent Plugins 客户端

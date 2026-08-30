@@ -1,7 +1,7 @@
 Punk Poster Layout
 
 Primary source author: AdrianPunk
-Agent Skill adaptation and packaging: ShanireZskills contributors
+Agent Skill adaptation and packaging: Aptinery contributors
 
 This Agent Skill adapts the following Punk Space articles by AdrianPunk:
 
@@ -11,7 +11,7 @@ https://mp.weixin.qq.com/s/HZHnjGwxIa9tBel3Xky1ag
 https://mp.weixin.qq.com/s/1y6PzWf4mij5je0pExIQFA
 "AI 做海报、HTML 构图手册：16 种控制网格、图文关系与信息密度的海报构图——下册"
 
-ShanireZskills contributors restructured the source material for progressive
+Aptinery contributors restructured the source material for progressive
 Agent Skills loading and prepared the distribution packaging. The package
 retains its existing GNU GPL v3.0 declaration; this notice does not claim or
 document a GPL adaptation grant for the source articles.

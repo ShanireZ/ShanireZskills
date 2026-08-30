@@ -1,18 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "shanirezskills",
+  "name": "aptinery",
   "owner": {
     "name": "ShanireZ",
     "url": "https://github.com/ShanireZ"
   },
-  "description": "ShanireZ's public Agent Skills marketplace.",
-  "version": "0.1.0",
+  "description": "Aptinery — A curated foundry for Agent Skills.",
+  "version": "0.2.0",
   "plugins": [
     {
       "name": "shanirez-style",
       "source": "./plugins/shanirez-style",
       "description": "ShanireZ's personal C++14 style for competitive-programming and online-judge solutions.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "ShanireZ"
       },
@@ -27,7 +27,7 @@
       "name": "k12-lesson-plan-creation",
       "source": "./plugins/k12-lesson-plan-creation",
       "description": "Create standards-aligned K-12 lesson plans, student materials, assessments, and observation templates.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Anthropic / Learning Commons"
       },
@@ -43,7 +43,7 @@
       "name": "k12-lesson-differentiation",
       "source": "./plugins/k12-lesson-differentiation",
       "description": "Adapt an existing K-12 lesson for students at different proficiency levels and needs.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Anthropic / Learning Commons"
       },
@@ -59,7 +59,7 @@
       "name": "animate",
       "source": "./plugins/animate",
       "description": "Build polished web animations with deliberate motion, easing, duration, interruption, and exit behavior.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -76,7 +76,7 @@
       "name": "animate-expo",
       "source": "./plugins/animate-expo",
       "description": "Build performant React Native and Expo animations, gestures, transitions, and haptics.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -93,7 +93,7 @@
       "name": "animation-vocabulary",
       "source": "./plugins/animation-vocabulary",
       "description": "Identify exact terms for vaguely described web animation and motion effects.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -109,7 +109,7 @@
       "name": "apple-design",
       "source": "./plugins/apple-design",
       "description": "Apply Apple's interface design and fluid-motion principles to web experiences.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -125,7 +125,7 @@
       "name": "emil-design-eng",
       "source": "./plugins/emil-design-eng",
       "description": "Apply Emil Kowalski's UI polish, component-design, and animation principles.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -141,7 +141,7 @@
       "name": "find-animation-opportunities",
       "source": "./plugins/find-animation-opportunities",
       "description": "Find UI areas that genuinely benefit from motion and propose exact values without implementing.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -157,7 +157,7 @@
       "name": "improve-animations",
       "source": "./plugins/improve-animations",
       "description": "Audit a codebase's motion and produce prioritized, implementation-ready improvement plans.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -173,7 +173,7 @@
       "name": "prototype",
       "source": "./.claude-plugins/prototype",
       "description": "Build several distinct UI variants behind a visual picker, then promote the chosen direction.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -189,7 +189,7 @@
       "name": "review-animations",
       "source": "./.claude-plugins/review-animations",
       "description": "Review animation code against a strict craft, performance, interaction, and accessibility bar.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -205,7 +205,7 @@
       "name": "ask-sonner",
       "source": "./plugins/ask-sonner",
       "description": "Install, configure, style, and troubleshoot the Sonner React toast library.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -221,7 +221,7 @@
       "name": "pick-ui-library",
       "source": "./.claude-plugins/pick-ui-library",
       "description": "Choose a trusted frontend library for common UI, motion, charting, state, and styling tasks.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -237,7 +237,7 @@
       "name": "write-swift",
       "source": "./plugins/write-swift",
       "description": "Write and review modern Swift with strong modeling, concurrency, performance, and testing practices.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Emil Kowalski"
       },
@@ -253,7 +253,7 @@
       "name": "punk-cover",
       "source": "./plugins/punk-cover",
       "description": "Generate social and editorial cover images from articles, posts, and topics using curated Punk visual styles.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "AdrianPunk and contributors"
       },
@@ -270,7 +270,7 @@
       "name": "punk-avatar",
       "source": "./plugins/punk-avatar",
       "description": "Generate avatars and keepsake portraits from photos or descriptions using curated Punk visual styles.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "AdrianPunk and contributors"
       },
@@ -287,9 +287,9 @@
       "name": "punk-poster-layout",
       "source": "./plugins/punk-poster-layout",
       "description": "Structure standalone posters, flyers, key visuals, and single-canvas editorial sections with a 32-layout catalog only when explicit composition control is requested; not a default for ordinary websites/UI, generic heroes, or platform covers.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
-        "name": "AdrianPunk; adapted by ShanireZskills contributors"
+        "name": "AdrianPunk; adapted by Aptinery contributors"
       },
       "category": "design",
       "keywords": [
@@ -304,7 +304,7 @@
       "name": "k12-lesson-prep",
       "source": "./plugins/k12-lesson-prep",
       "description": "Prepare to teach an existing K-12 lesson by working through its key task and producing a concise teacher prep note.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Anthropic / Learning Commons"
       },
@@ -320,7 +320,7 @@
       "name": "k12-check-for-understanding",
       "source": "./plugins/k12-check-for-understanding",
       "description": "Create 1-3 item math checks for understanding with misconception-based distractors and next-step teacher guidance.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Anthropic / Learning Commons"
       },

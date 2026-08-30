@@ -52,7 +52,7 @@ The `main` branch advanced by one commit, `281eb8d41fe2837d911541c9bbb870b58add8
 - `k12-lesson-planning` was renamed upstream to `k12-lesson-plan-creation`. Compare reports 15 renamed paths and one added `LICENSE` path in the new tree. The content changes update the skill name and internal cross-references, expand the frontmatter license statement, and move SPDX attribution from leading HTML comments to trailing copyright lines. The renderer sources themselves are path renames without content changes.[^anthropic-compare]
 - `k12-lesson-differentiation` changes eight vendored files: `SKILL.md`; `references/ela.md`, `learning-commons-kg.md`, `math.md`, `output.md`, `science.md`, and `social_studies.md`; and `scripts/render_all.sh`. The observed changes are the planning-to-plan-creation cross-reference, fuller Apache attribution, relocation of SPDX text, and a matching script comment; no instructional body was rewritten.[^anthropic-compare]
 
-The rename was a marketplace compatibility decision, not merely a file move: ShanireZskills published `k12-lesson-planning`, while upstream declares `name: k12-lesson-plan-creation`.[^anthropic-compare]
+The rename was a marketplace compatibility decision, not merely a file move: the repository had published `k12-lesson-planning`, while upstream declares `name: k12-lesson-plan-creation`.[^anthropic-compare]
 
 ### New upstream skills
 
@@ -63,7 +63,7 @@ The current upstream tree contains four skills instead of the two at the pin:[^a
 - `k12-lesson-differentiation` — existing, updated as above.
 - `k12-lesson-plan-creation` — the renamed successor to `k12-lesson-planning`.
 
-The remaining 12 changed paths are repository packaging, README, and evaluation-rubric changes rather than files currently vendored into ShanireZskills.[^anthropic-compare]
+The remaining 12 changed paths are repository packaging, README, and evaluation-rubric changes rather than files currently vendored into this marketplace.[^anthropic-compare]
 
 ### Implemented migration
 
