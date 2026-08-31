@@ -4,28 +4,18 @@
 
 ## What this repo is
 
-Aptinery — A curated foundry for Agent Skills. It is a public marketplace containing 20 independently installable plugins, combining first-party skills with curated, cross-client adaptations of non-standard upstream skills. [GitHub](https://github.com/ShanireZ/Aptinery) is the primary repository; [CNB](https://cnb.cool/Round1/Aptinery) is the mirror synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1).
+Aptinery — A curated foundry for Agent Skills. It is a public marketplace containing 20 independently installable plugins, combining first-party skills with curated, cross-client adaptations of non-standard upstream skills. [GitHub `ShanireZ/Aptinery`](https://github.com/ShanireZ/Aptinery) is authoritative; [CNB `Round1/Aptinery`](https://cnb.cool/Round1/Aptinery) is its mirror, synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1). ⚠ 本地目录仍叫 `ShanireZskills/`，本地 remote URL 也还写旧名（靠 GitHub 改名重定向工作）——未收敛。
 
 The marketplace machine identifier is `aptinery`; the user-facing name is `Aptinery`. Each plugin contains exactly one same-named Agent Skill:
 
-```text
-plugins/
-├── shanirez-style/             # first-party, GPL-3.0
-├── k12-lesson-plan-creation/   # vendored, Apache-2.0
-├── k12-lesson-differentiation/ # vendored, Apache-2.0
-├── k12-lesson-prep/            # vendored, Apache-2.0
-├── k12-check-for-understanding/ # vendored, Apache-2.0; math only
-├── punk-cover/                 # vendored; upstream declares no license; 25 cover style atoms
-├── punk-avatar/                # vendored; upstream declares no license; 6 avatar style atoms
-├── punk-poster-layout/         # article-derived, GPL-3.0; 32 composition systems
-└── <12 Emil Kowalski skills>/  # vendored, MIT
-    └── skills/<same-name>/
+布局与许可归属（权威是 `.claude-plugin/marketplace.json` 与各 `plugin.json`，用 `ls plugins/` 现查，不在此维护清单）：
 
-.claude-plugins/                # Claude-only source mirrors for 3 explicit-invocation skills
-├── pick-ui-library/
-├── prototype/
-└── review-animations/
-```
+- `plugins/shanirez-style/` — 一方，GPL-3.0。
+- `plugins/k12-*/`（4 个）— vendored，Apache-2.0。
+- `plugins/punk-cover/`、`plugins/punk-avatar/` — vendored，**上游未声明许可**。
+- `plugins/punk-poster-layout/` — 文章改编，GPL-3.0。
+- 其余 12 个 Emil Kowalski 技能 — vendored，MIT。
+- `.claude-plugins/{pick-ui-library,prototype,review-animations}/` — Claude 专用源镜像，是打包适配器**不是额外产品**：市场只有 20 个名字，不是 23。
 
 Distribution adapters live at:
 
@@ -38,23 +28,7 @@ Keep `0.2.0`-style versions synchronized across all plugin and marketplace manif
 
 ## First-party style source of truth
 
-Every statistic in `plugins/shanirez-style/skills/shanirez-style/SKILL.md` is measured against the [`../OJCode`](../OJCode) corpus — do not add, soften, or strengthen a claim without re-running the count. Method:
-
-```bash
-cd D:/Workspace/OJCode
-git ls-files '*.cpp' > /tmp/all.txt
-git log --diff-filter=A --since="<2 years ago>" --name-only --format="" -- '*.cpp' \
-  | grep -v '^$' | sort -u > /tmp/added.txt
-while IFS= read -r f; do [ -f "$f" ] && printf '%s\n' "$f"; done \
-  < /tmp/added.txt > /tmp/recent.txt
-xargs -a /tmp/recent.txt -d '\n' grep -lIE '<pattern>' | wc -l
-```
-
-- `--diff-filter=A` alone is not the recent set; intersect it with files that still exist.
-- Where a habit shifted, the last two years win.
-- State whether a percentage is whole-corpus or recent.
-- Use `xargs -a <list> -d '\n'`; filenames contain spaces.
-- Grep before asserting a name or the absence of a form.
+`plugins/shanirez-style/skills/shanirez-style/SKILL.md` 里的每一条统计都是对 [`../OJCode`](../OJCode) 语料实测出来的——**不重新跑一遍计数，就不要新增、削弱或强化任何一条断言**。复算方法与四个易错点见 [`docs/style-corpus-method.md`](docs/style-corpus-method.md)。
 
 ## Vendored K-12 skills
 
@@ -70,10 +44,9 @@ The four skill trees under `plugins/k12-{lesson-plan-creation,lesson-differentia
 
 The 12 skill directories imported from `emilkowalski/skills` are pinned to commit `d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7` and remain MIT-licensed. Preserve the root `NOTICE` attribution and the MIT `LICENSE` copies at both plugin and skill roots.
 
-- Nine primary skill trees are copied verbatim. Do not silently edit their upstream files; record any intentional adaptation in `NOTICE`.
-- `pick-ui-library`, `prototype`, and `review-animations` use `agents/openai.yaml` with `policy.allow_implicit_invocation: false` in their primary plugin trees because that is Codex's invocation-policy contract. Their Markdown bodies remain upstream-identical; only the invocation frontmatter is translated, and `review-animations` adds an explicit-only sentence to its description.
+- Nine primary skill trees are verbatim. Do not silently edit upstream files; record any adaptation in `NOTICE`.
+- `pick-ui-library`/`prototype`/`review-animations` carry `agents/openai.yaml` with `policy.allow_implicit_invocation: false` (Codex's invocation contract). Markdown bodies stay upstream-identical — only the invocation frontmatter is translated, plus one explicit-only sentence in `review-animations`'s description.
 - `.claude-plugins/{pick-ui-library,prototype,review-animations}/` are exact upstream source mirrors used only by `.claude-plugin/marketplace.json`. They retain Claude's `disable-model-invocation: true`; keep them byte-identical to the pinned upstream skill trees.
-- The Claude mirror directories are packaging adapters, not extra marketplace products. The public marketplace contains 20 names, not 23.
 
 ## Vendored Punk skills without a declared upstream license
 
@@ -82,7 +55,7 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 - Preserve the upstream `SKILL.md`, `agents/openai.yaml`, references, and selected style atoms verbatim. Record any intentional adaptation in `NOTICE`.
 - Do not restore the removed GPLv3 copies or claims from Git history, archives, caches, or prior records. A future license declaration requires explicit, independently verifiable evidence from the rights holder.
 - `punk-cover` carries only its 25 cover-capable style atoms; `punk-avatar` carries only its six avatar-capable style atoms. Their `../../styles/{style-id}` runtime paths depend on those plugin-root `styles/` directories.
-- Upstream screenshots and repository-level validation scripts are not runtime dependencies and are intentionally not vendored.
+- Upstream screenshots and repo-level validation scripts are not runtime deps; intentionally not vendored.
 
 ## Punk poster-layout skill
 
@@ -90,7 +63,7 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 
 - Preserve all 32 named composition systems, their image-prompt and HTML/CSS expressions, and the review criteria when reorganizing the references.
 - Keep the skill's role structural: it selects and encodes focal flow, hierarchy, grids, image-text relationships, and density. It does not own the visual style atoms used by `punk-cover`.
-- The original MHTML snapshots are source material outside the plugin and are not runtime assets. Do not add incomplete web archives or lazy-loaded remote images to the plugin package.
+- The original MHTML snapshots are source material outside the plugin, not runtime assets. Do not add incomplete web archives or lazy-loaded remote images to the package.
 
 ## Format constraints
 
@@ -98,7 +71,7 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 - The vendored K-12 skills retain their upstream `license` frontmatter field and Apache notices.
 - Vendored Emil Kowalski skills retain their upstream frontmatter except for the three documented cross-client invocation-policy translations above.
 - `.gitattributes` pins text files to LF.
-- The no-blank-lines/no-trailing-newline rule applies to generated OJ `.cpp` and C++ samples, not Markdown generally.
+- The no-blank-lines/no-trailing-newline rule covers generated OJ `.cpp` and C++ samples only, not Markdown.
 - Templates are code: compile changed C++ templates with `g++ -std=c++14 -O2 -Wall -m64 -static-libgcc` and run a hand-checked input.
 
 ## Validation
@@ -118,22 +91,6 @@ Do not create or restore `docs/research/` or standalone research/audit report fi
 
 ## Agent skills
 
-### Issue tracker
-
-Issues and specs are tracked in this repository's GitHub Issues. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Use the five canonical triage labels. See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-This target uses a single-context domain-doc layout. See `docs/agents/domain.md`.
-
-### Related engineering skills
-
-Working rules by phase, completion criteria, and the skill mapping live in the workspace-root [`Docs/dev_guide.md`](../Docs/dev_guide.md), which is imported into every session. It replaced the per-project `docs/agents/skill-workflows.md` copies, which had drifted and named uninstalled skills.
-
-### Documentation system
-
-Maintain durable documentation as an OKF knowledge bundle. See `docs/agents/documentation.md` and `docs/agents/index.md`.
+- **Issue tracker：本仓 GitHub Issues。**
+- triage 标签、domain 文档布局、OKF 文档系统沿用工作区约定：[`docs/agents/index.md`](docs/agents/index.md)。
+- 按环节的守则、完成判据与技能对照见根 [`../Docs/dev_guide.md`](../Docs/dev_guide.md)，它每个会话自动加载。
