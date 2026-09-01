@@ -4,7 +4,7 @@
 
 ## What this repo is
 
-Aptinery — A curated foundry for Agent Skills. It is a public marketplace containing 20 independently installable plugins, combining first-party skills with curated, cross-client adaptations of non-standard upstream skills. [GitHub `ShanireZ/Aptinery`](https://github.com/ShanireZ/Aptinery) is authoritative; [CNB `Round1/Aptinery`](https://cnb.cool/Round1/Aptinery) is its mirror, synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1). ⚠ 本地目录仍叫 `ShanireZskills/`，本地 remote URL 也还写旧名（靠 GitHub 改名重定向工作）——未收敛。
+Aptinery — A curated foundry for Agent Skills. It is a public marketplace containing 20 independently installable plugins, combining first-party skills with curated, cross-client adaptations of non-standard upstream skills. [GitHub `ShanireZ/Aptinery`](https://github.com/ShanireZ/Aptinery) is authoritative; [CNB `Round1/Aptinery`](https://cnb.cool/Round1/Aptinery) is its mirror, synced by [`../sync-github-cnb.ps1`](../sync-github-cnb.ps1). ★ 名字已于 2026-08-31 收敛：本地目录、两个远端仓、两个本地 remote URL 全是 `Aptinery`，不再靠 GitHub 的改名重定向工作。
 
 The marketplace machine identifier is `aptinery`; the user-facing name is `Aptinery`. Each plugin contains exactly one same-named Agent Skill:
 
