@@ -8,7 +8,7 @@ status: stable
 
 # shanirez-style 语料计数方法
 
-Every statistic in `plugins/shanirez-style/skills/shanirez-style/SKILL.md` is measured against the [`../OJCode`](../OJCode) corpus — do not add, soften, or strengthen a claim without re-running the count. Method:
+Every statistic in `plugins/shanirez-style/skills/shanirez-style/SKILL.md` is measured against the [`../../OJCode`](../../OJCode) corpus — do not add, soften, or strengthen a claim without re-running the count. Method:
 
 ```bash
 cd D:/Workspace/OJCode
