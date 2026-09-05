@@ -35,7 +35,7 @@ the sources used by the Claude marketplace.
 
 This distribution also includes material copied from:
 https://github.com/adrianpunk/Punk-Skill
-upstream commit 50ea29b65b98788f9ed1df62818dbe530855bfb3
+upstream commit a52e4456b8a4ccd4312069d6bc3755e2894dbc93
 
 The upstream README credits AdrianPunk for prompt design and style direction
 and jinchenma94 for repository maintenance.
@@ -63,6 +63,15 @@ model-derived visible copy. The change also prevents an image model's
 generated, misspelled, missing, or cropped text from being reported as verified
 merely because the prompt contained the intended copy. Matching modification
 notices are included at the `punk-cover` plugin root and skill root.
+
+On 2026-09-05, the vendored `punk-cover` and `punk-avatar` material was updated
+to the upstream commit recorded above, which adds five cover-capable and one
+avatar-capable style atoms. That commit still contains no license declaration,
+so the status recorded above is unchanged. The `punk-avatar` skill files and all
+style atoms are verbatim at the new commit. The local `punk-cover` adaptation
+was re-merged onto the new upstream base: upstream's multi-size cover suite is
+preserved, and the local retry bound and generated-text status were reconciled
+with it so that both now apply per target image rather than per run.
 
 The `punk-poster-layout` skill adapts two articles authored by Punk Space /
 AdrianPunk, who remains the primary source attribution:

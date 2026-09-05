@@ -2,7 +2,7 @@ punk-cover
 
 This package includes material copied from:
 https://github.com/adrianpunk/Punk-Skill
-upstream commit 50ea29b65b98788f9ed1df62818dbe530855bfb3
+upstream commit a52e4456b8a4ccd4312069d6bc3755e2894dbc93
 
 The upstream README credits AdrianPunk for prompt design and style direction
 and jinchenma94 for repository maintenance.
@@ -25,6 +25,12 @@ poster-like treatment; when they explicitly request focal flow, grids,
 image-text relationships, or density, `punk-poster-layout` serves only as a
 subordinate structural step. The skill auto-selects exactly one eligible catalog
 style only when the user explicitly delegates style selection or all settings.
+
+On 2026-09-05, this distribution updated the vendored material to the upstream
+commit recorded above and re-merged the local adaptation onto that base.
+Upstream's multi-size cover suite is preserved; the local retry bound and the
+local generated-text status were reconciled with it and now apply per target
+image rather than per run.
 
 These changes address the risk that an image model may misspell, omit, invent,
 or crop visible text even when the intended wording is correct in the prompt.

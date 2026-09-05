@@ -13,7 +13,7 @@ The final image prompt is not a loose concatenation of "cover instructions + sty
 
 Use three inputs:
 
-1. `punk-cover` task fields: platform, aspect ratio, title clarity, article summarization, cover communication goals, and universal output constraints.
+1. `punk-cover` task fields: platform, aspect ratio, optional output dimensions and output mode, title clarity, article summarization, cover communication goals, and universal output constraints.
 2. The selected style's `META.md` metadata and `STYLE.md` reusable visual style atom.
 3. `references/cover-prompt-blueprint.md`, which defines the full cover prompt shape.
 
@@ -51,11 +51,14 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Custom: keep the user's ratio exactly.
    - If the user only provides source content, ask which platform they want to publish to. Do not generate the prompt yet.
    - If the user provides a custom ratio, use it and do not ask for platform unless the platform matters for wording.
+   - If the user provides exact width × height without a ratio, derive and preserve that ratio. If explicit dimensions and an explicit ratio conflict, ask which one should control before generating.
+   - Default to a single image. If the user explicitly requests a multi-size suite, preserve every requested ratio or output dimension and require at least two targets before generation.
+   - Never satisfy a multi-size request by cropping, stretching, padding, or placing multiple ratios in one grid; compile one independently composed prompt per target ratio.
    - Only skip this question when the user has already provided a platform, a ratio, or explicitly says to decide everything automatically.
 
 3. Confirm style before generating any prompt:
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, or an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
    - If no style is specified, recommend exactly three eligible catalog styles based on the content and give a one-sentence reason for each, then ask the user to choose one or provide a custom style direction.
    - Do not show all eligible styles by default unless the user asks for the full menu.
    - Auto-select exactly one eligible catalog style only when the user explicitly delegates style selection (for example, "you decide the style" or "auto for style") or says to decide everything automatically. Providing an article alone is not delegation.
@@ -83,6 +86,7 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Put only summarized context into the prompt; do not paste the original article body into the final prompt.
    - Leave optional fields blank only when the prompt says they can be blank.
    - Do not output analysis inside the final prompt.
+   - For a multi-size suite, compile the blueprint separately for each target ratio or dimension. Keep the content, metaphor, style identity, material, and palette consistent, but rewrite composition, scale, typography, whitespace, reading direction, and spatial behavior for each target.
 
 6. Choose the text-rendering path before image generation:
    - When exact visible wording is a hard requirement, default to `deterministic_text_overlay`:
@@ -95,22 +99,24 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Use `prompt_only` when requested or when image generation is unavailable. Prompt correctness does not test generated text.
 
 7. Save files before image generation:
-   - Create `punk-assets/punk-cover/{slug}/prompts/cover.md` with the complete filled prompt.
-   - If image generation returns an explicit local file path, downloadable URL, or image bytes for the current run, save that artifact as `punk-assets/punk-cover/{slug}/cover.png`.
+   - For a single image, create `punk-assets/punk-cover/{slug}/prompts/cover.md` with the complete filled prompt.
+   - For an explicitly requested multi-size suite, instead create one file per target as `punk-assets/punk-cover/{slug}/prompts/cover-{ratio-or-size}.md`, using filesystem-safe ratio or size labels.
+   - For a single image, if image generation returns an explicit local file path, downloadable URL, or image bytes for the current run, save that artifact as `punk-assets/punk-cover/{slug}/cover.png`.
    - Do not infer the correct artifact by scanning broad generated-image directories, because those directories may contain unrelated images from other runs.
    - If the image-generation tool only returns an inline preview with no explicit retrievable artifact for the current run, do not create a fake `cover.png`.
+   - For a multi-size suite, save each explicitly retrievable artifact as `punk-assets/punk-cover/{slug}/cover-{ratio-or-size}.png`; never combine the suite into a contact sheet unless the user separately requests one.
    - Do not persist intermediate backgrounds, typography files, OCR output, or alternate covers outside these established paths without user authorization. Temporary tool-managed data is not a deliverable.
 
 8. Generate, inspect, and report:
-   - Generate an image by default after saving the prompt when a usable image-generation tool is available, such as `image_gen`. An inline preview proves only that an image was generated; it does not prove that visible text is correct.
+   - Generate an image by default after saving the prompt when a usable image-generation tool is available, such as `image_gen`. Generate one independent image per target when the user explicitly requests a multi-size suite; otherwise generate one image. An inline preview proves only that an image was generated; it does not prove that visible text is correct.
    - Inspect the actual current-run image or inline preview at sufficient resolution. Compare every visible title, subtitle, and other legible string character-by-character against the approved-visible-copy manifest, and check that each is complete, readable, unobscured, and inside the crop-safe area. Also check that no unapproved or pseudo-text is visible.
    - Never use the prompt's correct wording, a compositor input string, or an intended layout as evidence that the rendered pixels are correct. OCR may assist inspection but cannot replace inspection of the actual artifact.
-   - Report exactly one generated-text status:
+   - Report exactly one generated-text status per generated image:
      - `generated text: passed` only when the actual final artifact was reliably inspected and every approved string matches exactly with no cropping or unapproved text.
      - `generated text: failed` when any character differs, any approved text is missing, duplicated unexpectedly, unreadable, obscured, or cropped, or any unapproved visible text appears.
      - `generated text: not tested` when delivery is prompt-only or the actual pixels cannot be inspected reliably, including inaccessible or insufficient-resolution previews.
    - Do not describe the cover or its text as successful when the status is `failed` or `not tested`. Report image generation, artifact saving, and generated-text validation as separate outcomes.
-   - Bound retries for one approved copy and layout: at most two image-generation attempts total (the initial attempt plus one correction) and, for deterministic composition, at most one overlay correction after inspection. After the bound is reached, stop with `generated text: failed`; offer a next step instead of retrying indefinitely.
+   - Bound retries for one approved copy and layout: at most two image-generation attempts per target (the initial attempt plus one correction) and, for deterministic composition, at most one overlay correction per target after inspection. After the bound is reached, stop with `generated text: failed`; offer a next step instead of retrying indefinitely.
    - Retrying does not authorize new copy, extra deliverable files, a different style, a different ratio, or broader filesystem searches.
    - Skip image generation only when the user explicitly asks for prompt-only output or the current environment has no image-generation tool. If image generation is unavailable, return the prompt file path and the full prompt content with `generated text: not tested`.
 
@@ -136,6 +142,11 @@ End by asking the user to choose a platform and one style, or to say "auto" if t
 ## Style Selection Heuristics
 
 - Use styles whose `outputs` metadata contains `cover` or `poster`.
+- Use `OSB 工业蓝线条隐喻` when the visual direction requires a full-bleed authentic OSB board, upper-left matte industrial-blue signage, one lower-right continuous-line metaphor, and more negative space than text and graphics combined.
+- Use `Godot 2D 像素隐喻海报` when a theme should become one playable-feeling pixel-art level, one game mechanic, one character action, and one symbolic goal or obstacle rather than a literal illustration or pixel-filtered image.
+- Use `立体纸雕概念海报` when one relationship, tension, or transformation should become a physically believable layered-paper metaphor with generous negative space, soft studio shadows, and typography integrated into the paper structure.
+- Use `纸面击凸压凹封面` when the cover should feel like an art-book or independent-magazine surface: authentic paper fiber, letterpress-like emboss and deboss, editorial type as composition, one restrained relief metaphor, and large negative space.
+- Use `超大标题图文穿插` when the title should become part of the composition through a single central subject, explicit front/back typography layers, controlled occlusion, and strong editorial-poster impact across custom ratios.
 - Use business/report styles for strategy, product, AI, startup, industry, consulting, or analysis content.
 - Use `复古时代错位编辑封面` for AI, coding, digital work, future tools, or contemporary topics that benefit from a human-centered mid-century illustration and one restrained era-displacement metaphor.
 - Use journal/concept styles for science, research, medicine, engineering, or mechanism-heavy content.
@@ -170,7 +181,7 @@ The cover must work for sharing: first glance identifies the topic, second glanc
 
 Avoid universal cover failures: PPT cover feel, course-cover feel, generic information-graphic template, e-commerce advertisement, unrelated decoration, misspelled title, missing title, title cropped beyond recognition, or title severely blocked by visual elements.
 
-Generate only one final image. Do not output explanations, alternatives, grids, contact sheets, or multi-option compositions.
+Generate only one final image per target ratio. For an explicitly requested multi-size suite, generate separate independently composed images rather than a grid or contact sheet. Do not output explanations, alternatives, or multi-option compositions.
 ```
 
 ## Output Discipline
@@ -185,3 +196,4 @@ Generate only one final image. Do not output explanations, alternatives, grids, 
 - Do not expose non-cover styles in the style menu.
 - Do not treat generated-image completion as generated-text validation.
 - For prompt-only delivery, always report `generated text: not tested`.
+- Default to one output. Only generate multiple images when the user explicitly requests a multi-size suite, and keep each ratio as a separate composition and artifact.

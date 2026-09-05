@@ -50,11 +50,11 @@ The 12 skill directories imported from `emilkowalski/skills` are pinned to commi
 
 ## Vendored Punk skills without a declared upstream license
 
-`plugins/punk-cover/skills/punk-cover/`, `plugins/punk-avatar/skills/punk-avatar/`, and their required `styles/` subsets are copied from `adrianpunk/Punk-Skill` commit `50ea29b65b98788f9ed1df62818dbe530855bfb3`. That pinned upstream commit contains no license declaration, so Aptinery does not assign, infer, or supplement one; redistribution permission is not established.
+`plugins/punk-cover/skills/punk-cover/`, `plugins/punk-avatar/skills/punk-avatar/`, and their required `styles/` subsets are copied from `adrianpunk/Punk-Skill` commit `a52e4456b8a4ccd4312069d6bc3755e2894dbc93`. That pinned upstream commit contains no license declaration, so Aptinery does not assign, infer, or supplement one; redistribution permission is not established.
 
 - Preserve the upstream `SKILL.md`, `agents/openai.yaml`, references, and selected style atoms verbatim. Record any intentional adaptation in `NOTICE`.
 - Do not restore the removed GPLv3 copies or claims from Git history, archives, caches, or prior records. A future license declaration requires explicit, independently verifiable evidence from the rights holder.
-- `punk-cover` carries only its 25 cover-capable style atoms; `punk-avatar` carries only its six avatar-capable style atoms. Their `../../styles/{style-id}` runtime paths depend on those plugin-root `styles/` directories.
+- `punk-cover` carries only its 30 cover-capable style atoms; `punk-avatar` carries only its seven avatar-capable style atoms, including `surreal-pop-up-paper-landscape`, whose two mode files under `references/` are runtime deps, not extras. Their `../../styles/{style-id}` runtime paths depend on those plugin-root `styles/` directories.
 - Upstream screenshots and repo-level validation scripts are not runtime deps; intentionally not vendored.
 
 ## Punk poster-layout skill
